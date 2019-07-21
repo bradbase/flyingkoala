@@ -1,0 +1,6 @@
+xlwings >= 0.15.8
+koala2 ==  0.0.31
+numpy >= 1.15.0
+pandas >= 0.25.0
+openpyxl==2.5.3
+python-harvest-redux==5.0.0b0

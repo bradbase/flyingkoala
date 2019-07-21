@@ -1,0 +1,70 @@
+\contentsline {section}{\numberline {1}TL;DR}{3}{section.1}% 
+\contentsline {paragraph}{}{3}{section*.2}% 
+\contentsline {subsection}{\numberline {1.1}The problem}{3}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Features}{3}{subsection.1.2}% 
+\contentsline {subsection}{\numberline {1.3}Benefits}{3}{subsection.1.3}% 
+\contentsline {section}{\numberline {2}Why FlyingKoala?}{4}{section.2}% 
+\contentsline {paragraph}{}{4}{section*.3}% 
+\contentsline {paragraph}{}{4}{section*.4}% 
+\contentsline {paragraph}{}{4}{section*.5}% 
+\contentsline {paragraph}{}{4}{section*.6}% 
+\contentsline {paragraph}{}{4}{section*.7}% 
+\contentsline {section}{\numberline {3}About FlyingKoala}{4}{section.3}% 
+\contentsline {paragraph}{}{4}{section*.8}% 
+\contentsline {paragraph}{}{4}{section*.9}% 
+\contentsline {paragraph}{}{4}{section*.10}% 
+\contentsline {paragraph}{}{4}{section*.11}% 
+\contentsline {paragraph}{}{5}{section*.12}% 
+\contentsline {paragraph}{}{5}{section*.13}% 
+\contentsline {paragraph}{}{5}{section*.14}% 
+\contentsline {paragraph}{}{5}{section*.15}% 
+\contentsline {section}{\numberline {4}How do I make it work?}{5}{section.4}% 
+\contentsline {paragraph}{}{5}{section*.16}% 
+\contentsline {paragraph}{}{5}{section*.17}% 
+\contentsline {paragraph}{}{6}{section*.18}% 
+\contentsline {subsection}{\numberline {4.1}Setting up Excel}{6}{subsection.4.1}% 
+\contentsline {paragraph}{}{6}{section*.19}% 
+\contentsline {paragraph}{}{6}{section*.20}% 
+\contentsline {paragraph}{}{6}{section*.21}% 
+\contentsline {paragraph}{}{6}{section*.22}% 
+\contentsline {paragraph}{}{6}{section*.23}% 
+\contentsline {subsection}{\numberline {4.2}Setting up your model(/s)}{6}{subsection.4.2}% 
+\contentsline {paragraph}{}{6}{section*.24}% 
+\contentsline {paragraph}{}{7}{section*.25}% 
+\contentsline {paragraph}{}{7}{section*.26}% 
+\contentsline {paragraph}{}{7}{section*.27}% 
+\contentsline {paragraph}{}{7}{section*.28}% 
+\contentsline {paragraph}{}{7}{section*.29}% 
+\contentsline {paragraph}{}{8}{section*.30}% 
+\contentsline {paragraph}{}{8}{section*.31}% 
+\contentsline {paragraph}{}{8}{section*.32}% 
+\contentsline {paragraph}{}{8}{section*.33}% 
+\contentsline {paragraph}{}{8}{section*.34}% 
+\contentsline {paragraph}{}{8}{section*.35}% 
+\contentsline {paragraph}{}{9}{section*.36}% 
+\contentsline {subsection}{\numberline {4.3}Using your model(/s)}{9}{subsection.4.3}% 
+\contentsline {paragraph}{}{9}{section*.37}% 
+\contentsline {paragraph}{}{9}{section*.38}% 
+\contentsline {paragraph}{}{9}{section*.39}% 
+\contentsline {paragraph}{}{9}{section*.40}% 
+\contentsline {paragraph}{}{9}{section*.41}% 
+\contentsline {paragraph}{}{9}{section*.42}% 
+\contentsline {paragraph}{}{10}{section*.43}% 
+\contentsline {paragraph}{}{10}{section*.44}% 
+\contentsline {paragraph}{}{10}{section*.45}% 
+\contentsline {paragraph}{}{10}{section*.46}% 
+\contentsline {paragraph}{}{10}{section*.47}% 
+\contentsline {paragraph}{}{10}{section*.48}% 
+\contentsline {paragraph}{}{11}{section*.49}% 
+\contentsline {paragraph}{}{11}{section*.50}% 
+\contentsline {paragraph}{}{12}{section*.51}% 
+\contentsline {section}{\numberline {5}Under the hood (the code)}{12}{section.5}% 
+\contentsline {paragraph}{}{12}{section*.52}% 
+\contentsline {paragraph}{}{12}{section*.53}% 
+\contentsline {subsection}{\numberline {5.1}DegreeDay}{12}{subsection.5.1}% 
+\contentsline {paragraph}{}{12}{section*.54}% 
+\contentsline {subsection}{\numberline {5.2}DegreeDayDynamicArray}{13}{subsection.5.2}% 
+\contentsline {paragraph}{}{13}{section*.55}% 
+\contentsline {paragraph}{}{13}{section*.56}% 
+\contentsline {paragraph}{}{13}{section*.57}% 
+\contentsline {section}{Index}{14}{section*.58}% 
