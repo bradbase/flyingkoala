@@ -353,6 +353,16 @@ $=$DegreeDayDynamicArray(Equation\_2,\$B2:\$B366,\$C2:\$C366) \index{DegreeDayDy
 
 \paragraph{} From here I'll assume you know Python or are near someone who can fill you in on the gaps.
 
+\paragraph{} This is the code you need to write to gain access to the pre-defined UDFs for DegreeDay and DegreeDayDynamicArray:
+
+\begin{lstlisting}[language=Python]
+import xlwings as xw
+from flyingkoala import flyingkoala
+from flyingkoala.horticulture import *
+\end{lstlisting}
+
+\paragraph{} Unless you have a need which falls outside the pre-defined UDFs, which will be defined in a document, the following sections are simply to illustrate how little code is required to support Excel equations defined by a domain expert.
+
 \subsection{DegreeDay}
 
 \paragraph{} The DegreeDay user defined function (UDF) is very literally a UDF as described by xlwings. If you are interested in writing UDFs I'll leave you to read from the xlwings doco. But we can see roughly 5 lines of code with a further 5 lines of mark-up.

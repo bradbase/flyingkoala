@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.17)  17 JUL 2019 23:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.7.17)  22 JUL 2019 00:02
 entering extended mode
 **./Introduction_Article.tex
 (Introduction_Article.tex
@@ -543,27 +543,27 @@ File: lstlang1.sty 2019/02/27 1.8b listings language file
 runsystem(makeindex Introduction_Article.idx)...executed (allowed).
 
  (Introduction_Article.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
  [14
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 408.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 418.
 
 (Introduction_Article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 408.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 408.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 418.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 418.
 Package rerunfilecheck Info: File `Introduction_Article.out' has not changed.
-(rerunfilecheck)             Checksum: 8BA794D22EB2A3DA7DCF14B11E345F72;837.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
+(rerunfilecheck)             Checksum: 6B2056A66F387A6B5205975E421F6FC5;837.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 418.
  ) 
 Here is how much of TeX's memory you used:
- 8378 strings out of 492895
- 120215 string characters out of 3133479
- 485678 words of memory out of 3000000
- 12080 multiletter control sequences out of 15000+200000
+ 8388 strings out of 492895
+ 120344 string characters out of 3133479
+ 530431 words of memory out of 3000000
+ 12084 multiletter control sequences out of 15000+200000
  8583 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,7n,74p,638b,2042s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 35i,7n,74p,638b,1331s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKT
@@ -573,9 +573,9 @@ public/amsfonts/cm/cmsl12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
 .pfb>
-Output written on Introduction_Article.pdf (14 pages, 1225267 bytes).
+Output written on Introduction_Article.pdf (14 pages, 1226124 bytes).
 PDF statistics:
- 322 PDF objects out of 1000 (max. 8388607)
- 127 named destinations out of 1000 (max. 500000)
+ 329 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
  163 words of extra memory for PDF output out of 10000 (max. 10000000)
 
