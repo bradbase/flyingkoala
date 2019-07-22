@@ -91,3 +91,18 @@ from flyingkoala import flyingkoala
 from flyingkoala.horticulture import *
 from flyingkoala.series import *
 ```
+
+# TODO:
+- [ ] Document the library of functions
+- [ ] Change intro document - bring TL;DR into line with README.md
+- [ ] Release a beta
+- [ ] Write an Excel plug-in which uses the xlwings REST interface to manage the model cache
+- [ ] Write a wizard, to launch from the Excel plug-in, which writes and updates the xlwings Python "code"(/imports) for FlyingKoala defined UDFs
+- [ ] Write tests
+- [ ] Write a MySQL module which behaves in a similar way to the sql extension of xlwings
+- [ ] Write a function that queries MySQL and returns results as a dynamic array that fit a worksheet
+- [ ] Write a PostgreSQL module which behaves in a similar way to the sql extension of xlwings
+- [ ] Write a function that queries PostgreSQL and returns results as a dynamic array that fit a worksheet
+- [ ] Refactor the timeseries Pandas wrappers
+- [ ] Run the accounting code for Harvest
+- [ ] Write more worked examples showcasing the various FlyingKoala defined functions (both RunPython and UDF)
