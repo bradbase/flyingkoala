@@ -1,6 +1,7 @@
+
 # FlyingKoala
 
-FlyingKoala facilitates deﬁning models (mathematical, technical and financial), scenario analysis and some system integration tasks in MS Excel while reducing the amount of computer code required to do these tasks and increasing the speed of calculation. The outcome is that people with good Excel skills can do more for themselves before requiring a code savvy offsider. FlyingKoala also facilitates communication of financial, technical and mathematical modelling as the expressions may be largely expressed in Excel formulas.
+FlyingKoala facilitates defining models (mathematical, technical and financial), scenario analysis and some system integration tasks in MS Excel while reducing the amount of computer code required to do these tasks and increasing the speed of calculation. The outcome is that people with good Excel skills can do more for themselves before requiring a code savvy offsider. FlyingKoala also facilitates communication of financial, technical and mathematical modelling as the expressions may be largely expressed in Excel formulas.
 
 From a technical standpoint FlyingKoala is a collection of helper functions for [xlwings](https://www.xlwings.org/). These helper functions reach out to:
 * [Koala2](https://github.com/vallettea/koala/blob/master/doc/presentation.md)
@@ -37,7 +38,7 @@ Wrapping a variety of things from Pandas is also a great effort in terms of time
 * Manages caching of models (eg; mathematical, technical, financial, etc...) reducing loading time and takes advantage of a Koala2 feature where an equation can be in workbooks other than the active one.
 
 
-# Beneﬁts of FlyingKoala
+# Benefits of FlyingKoala
 
 * Facilitates and encourages domain experts to define a language for their domain and then use the fresh language as the basis for defining models, equations and data related operations where that language can be both processed efficiently by computers and easily understood by other humans.
 * Audits are easier because more people know how to read and change Excel formulas than a computer coding language.
@@ -54,7 +55,7 @@ Wrapping a variety of things from Pandas is also a great effort in terms of time
   * all parties no longer require evenly skilled coders,
   * more domain experts can easily read the formulas.
 * Makes big data calculations in Excel quicker.
-* Multiple mathematical models can be deﬁned and assessed quickly. Great for scenario analysis.
+* Multiple mathematical models can be defined and assessed quickly. Great for scenario analysis.
 * Extends xlwings to be even more powerful in;
   * Applying Excel formulas to datasets without writing much Python code (in the case of the FlyingKoala UFDs, if any)
   * Data analysis
