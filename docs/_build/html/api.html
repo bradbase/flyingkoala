@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Python API &#8212; FlyingKoala 0.0.0 documentation</title>
+    <title>API &#8212; FlyingKoala 0.0.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -32,18 +32,98 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="python-api">
-<span id="api"></span><h1>Python API<a class="headerlink" href="#python-api" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="api">
+<span id="id1"></span><h1>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="user-defined-functions">
 <h2>User Defined Functions<a class="headerlink" href="#user-defined-functions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="module-flyingkoala">
-<span id="energy"></span><h3>Energy<a class="headerlink" href="#module-flyingkoala" title="Permalink to this headline">¶</a></h3>
+<p>These are the User Defined Functions UDFs that come with FlyingKoala.</p>
+<div class="section" id="energy">
+<h3>energy<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h3>
+<p>A module with energy related functions.</p>
+<div class="section" id="id2">
+<h4>energy<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>SOLARNOON(latitude, longitude, times)</p></li>
+</ul>
+<p>Uses PVLib to determine solar noon for a given latitude and longitude. Returns a dynamic array.</p>
+</div>
+</div>
+<div class="section" id="horticulture">
+<h3>horticulture<a class="headerlink" href="#horticulture" title="Permalink to this headline">¶</a></h3>
+<p>A module with horticulture related functions.</p>
+<div class="section" id="id3">
+<h4>horticulture<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>DegreesDay(model, T_min, T_max)</p></li>
+</ul>
+<p>Uses Koala2 to reference an Excel formula definition for a degrees day calculation. Returns a numeric value.</p>
+<ul class="simple">
+<li><p>DegreesDayDynamicArray(model, T_min, T_max)</p></li>
+</ul>
+<p>Uses Koala2 to reference an Excel formula definition for a degrees day calculation. Returns a dynamic array.</p>
+</div>
+</div>
+<div class="section" id="timeseries">
+<h3>timeseries<a class="headerlink" href="#timeseries" title="Permalink to this headline">¶</a></h3>
+<p>A module with time series related functions.</p>
+<div class="section" id="id4">
+<h4>timeseries<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>KEEPRECORDS(times, inputs, window=5)</p></li>
+</ul>
+<p>Keeps records at an offset determined by window. Returns a Dynamic Array.</p>
+<ul class="simple">
+<li><p>RESAMPLEMINS(times, inputs, window=5, operation=’mean’)</p></li>
+</ul>
+<p>Performs a look-ahead re-sample of size window with stated operation on a time series for values in inputs and does not return the time index. Returns a Dynamic Array.</p>
+<ul class="simple">
+<li><p>RESAMPLEMINSWITHINDEX(times, inputs, window=5, operation=’mean’)</p></li>
+</ul>
+<p>Performs a look-ahead re-sample average of size window on a time series for values in inputs and returns with the time index. Returns a Dynamic Array.</p>
+<ul class="simple">
+<li><p>TIMEISBETWEEN(keys, below, above, periods)</p></li>
+</ul>
+<p>Decides if a time is between certain range of a given time. Returns boolean.</p>
+<ul class="simple">
+<li><p>TIMESERIESWINDOWAVERAGE(times, inputs, window=5)</p></li>
+</ul>
+<p>Performs a look-ahead moving average of size window on a time series for values in inputs. Returns a Dynamic Array.</p>
+</div>
 </div>
 </div>
 <div class="section" id="vba-macros">
 <h2>VBA Macros<a class="headerlink" href="#vba-macros" title="Permalink to this headline">¶</a></h2>
+<p>These are the RunPython macros that come with FlyingKoala.</p>
+<p>They don’t work “out of the box” yet – I’ve not written the plug-in but would work if you wrote your own RunPython calls.</p>
 <div class="section" id="accounting">
 <h3>Accounting<a class="headerlink" href="#accounting" title="Permalink to this headline">¶</a></h3>
+<p>A module with accounting related functions.</p>
+<div class="section" id="harvest">
+<h4>Harvest<a class="headerlink" href="#harvest" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>get_harvest_invoices()</p></li>
+</ul>
+<p>Queries Harvest for all invoices. Creates a worksheet called “Harvest Invoices” for them.</p>
+<ul class="simple">
+<li><p>get_harvest_time_entries()</p></li>
+</ul>
+<p>Queries Harvest for all time entries. created a worksheet called “Harvest Time Entries” for them.</p>
+</div>
+<div class="section" id="utils">
+<h4>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>delete_columns(sheet_to_delete_from, columns_to_keep, sheet_rename, delete=True)</p></li>
+</ul>
+<p>Deletes in place all columns from a given worksheet keeping only those named by column letter in columns_to_keep. Delete flag inverts the selection.</p>
+<ul class="simple">
+<li><p>keep_columns(sheet_to_delete_from, columns_to_delete, sheet_rename)</p></li>
+</ul>
+<p>Convenience function. Same as delete_columns except defaults delete to False.</p>
+<ul class="simple">
+<li><p>make_employee_pivot_table()</p></li>
+</ul>
+<p>Takes a table called “Employee Hours” and creates a pivot table.</p>
+</div>
 </div>
 </div>
 </div>
@@ -69,9 +149,17 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use.html">Using FlyingKoala</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Python API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#user-defined-functions">User Defined Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#vba-macros">VBA Macros</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#user-defined-functions">User Defined Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#energy">energy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#horticulture">horticulture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#timeseries">timeseries</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vba-macros">VBA Macros</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accounting">Accounting</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
