@@ -3,10 +3,6 @@ import xlwings as xw
 from xlwings import constants
 from openpyxl import utils
 
-from harvest import Harvest
-from harvest.reports import Reports
-from harvest.dataclasses import *
-
 
 def delete_columns(sheet_to_delete_from, columns_to_keep, sheet_rename, delete=True):
     if not isinstance(columns_to_keep, list):

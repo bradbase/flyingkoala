@@ -1,11 +1,12 @@
 # accounting.py
 import xlwings as xw
 from xlwings import constants
-from openpyxl import utils
 
 from harvest import Harvest
 from harvest.reports import Reports
 from harvest.dataclasses import *
+
+import .utils
 
 personal_access_token = PersonalAccessToken('ACCOUNT ID', 'PERSONAL ACCESS TOKEN')
 reports = Reports("https://api.harvestapp.com/api/v2", personal_access_token)
