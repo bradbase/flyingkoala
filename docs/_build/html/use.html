@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Using FlyingKoala &#8212; FlyingKoala 0.0.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Python API" href="api.html" />
+    <link rel="prev" title="Installation" href="installation.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="using-flyingkoala">
+<span id="use"></span><h1>Using FlyingKoala<a class="headerlink" href="#using-flyingkoala" title="Permalink to this headline">¶</a></h1>
+<p>This guide assumes you have FlyingKoala and xlwings already installed. If that’s not the case, head over to <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Installation</span></a>.</p>
+<div class="section" id="using-the-flyingkoala-user-defined-functions">
+<h2>1. Using the FlyingKoala User Defined Functions<a class="headerlink" href="#using-the-flyingkoala-user-defined-functions" title="Permalink to this headline">¶</a></h2>
+<p>Providing the User Defined Functions (UDFs) you are expecting to use already exist in the FlyingKoala library you can simply import them.</p>
+<p>Follow the instructions from xlwings to install their plug-in into your workbook.</p>
+<p>Make sure you have the dependencies installed for the FlyingKoala module you want to use. Notes on this can be found in <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Installation</span></a>.</p>
+<p>For calculating Growing Degree-Days you would have a module that would look like this:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
+<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
+<span class="kn">from</span> <span class="nn">flyingkoala.horticulture</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>For doing some time series transformation you would have a module that would look like this:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
+<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
+<span class="kn">from</span> <span class="nn">flyingkoala.series</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+<p>For doing some time series transformation while calculating Growing Degrees-Day you would have a module that would look like this:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
+<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
+<span class="kn">from</span> <span class="nn">flyingkoala.horticulture</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flyingkoala.series</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-the-flyingkoala-vba-macros">
+<h2>2. Using the FlyingKoala VBA macros<a class="headerlink" href="#using-the-flyingkoala-vba-macros" title="Permalink to this headline">¶</a></h2>
+<p>Providing the macro functions you are expecting to use already exist in the FlyingKoala library they will be installed with the FlyingKoala plug-in.</p>
+<p>Follow the instructions from xlwings to install their plug-in into your workbook. And then follow the instructions from xlwings to install FlyingKoala plug-in into your workbook.</p>
+<p>You’ll want to be familiar with writing VBA and reading API style documentation for this one.</p>
+<p>Once everything is installed correctly you can call the FlyingKoala VBA functions as you normally do with VBA.</p>
+</div>
+<div class="section" id="freestyling-with-flyingkoala">
+<h2>3. Freestyling with FlyingKoala<a class="headerlink" href="#freestyling-with-flyingkoala" title="Permalink to this headline">¶</a></h2>
+<p>If the functionality you want isn’t yet supported in a FlyingKoala module, you’ll need to write your own (and maybe put it forward to be included in FlyingKoala :D).</p>
+<p>This is the advanced approach. It has a rather steep curve. Once you ‘get it’ things aren’t terrible, but I do admit there are a lot of moving parts. The worked example in the example document Introduction_Article.PDF is a great resource.</p>
+<p>From here on you’ll want to be an particularly familiar with;</p>
+<ul class="simple">
+<li><p>writing Python</p></li>
+<li><p>writing xlwings UDFs</p></li>
+<li><p>using Excel named ranges, named cells and Excel’s Manage Ranges feature</p></li>
+</ul>
+<p>Strap in… Here we go!</p>
+<p>At the very core FlyingKoala offers an xlwings friendly interface to Koala2.</p>
+<p>Koala2 is a project which can read an MS Excel equation, convert it into Python and then evaluate (run) the Python to produce a result for the equation. FlyingKoala caches the Python code generated for each MS Excel equation and so we can change out the definition of an equation on each call to a function.</p>
+<p>To take advantage of the FlyingKoala interface to Koala2 we need to write a function which takes at least two types of argument:</p>
+<ul class="simple">
+<li><p>named range name</p></li>
+<li><p>terms for an equation</p></li>
+</ul>
+<p>The named range name is simply a string which identifies the name of a named range containing an equation you want interpreted into Python. This is what the equation will have been keyed on in the cache.</p>
+<p>Terms for an equation are variables which will be used while evaluating an equation.</p>
+<p>Let us work through writing a Python function taking advantage of FlyingKoala’s interface with Koala2 using Growing Degrees Day as the example.</p>
+<p>Growing Degrees Day calculations are often specific to a particular application. Potentially differing on region, variety of plants or a number of other influences. When we look at Wikipedia we can find no less than two different equations.</p>
+<div class="math notranslate nohighlight">
+\[GDD  = \frac{T_{\textrm{max}} + T_{\textrm{min}}}{2} - T_{\textrm{base}}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[GDD  =  \textrm{max}\left( \frac{T_{\textrm{max}} + T_{\textrm{min}}}{2} - T_{\textrm{base}} \, ,\,0\right)\]</div>
+<p>Consider a situation where we want to do some modelling of those two documented examples and, maybe, develop another method to optimize for our specific situation. It would be great to simply write the equations in Excel while we are running scenarios and developing the new one.</p>
+<p>We can see in the above that even though the relationship between the terms is quite different, calculating a Growing Degree Day appears to require the same number of inputs, namely T_min, T_max and T_base. The rest of the relationship is in operators and hard constants. This is an observation which often holds up while developing equations… You only have, or need, particular inputs to find the answer to something and if there is another pathway to the answer it is likely to still only need the same inputs (often enough they are the only inputs you <em>can get</em>).</p>
+<p>The truly variable terms in the Growing Degree Day equations are T_min and T_max. To obviate some Wikipedia reading, T_base is usually set to a value of 10. This makes T_base a soft constant. One you <em>might</em> change but are likely not to. We want to support an ability to change it. Remember, we are trying to invent new mathematics so if there’s a knob - we need to be able to turn it.</p>
+<p>With that understanding, we can now write a Python function which takes a key for the cache (a named range name) and two parameters being T_min and T_max:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span> <span class="k">as</span> <span class="n">fk</span>
+
+<span class="k">def</span> <span class="nf">DegreeDay</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">T_min</span><span class="p">,</span> <span class="n">T_max</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function for calculating Degree Day&quot;&quot;&quot;</span>
+
+    <span class="n">inputs_for_DegreeDay</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;T_min&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">T_min</span><span class="p">]),</span> <span class="s1">&#39;T_max&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">T_max</span><span class="p">])})</span>
+    <span class="k">return</span> <span class="n">fk</span><span class="o">.</span><span class="n">EvaluateKoalaModel</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">inputs_for_DegreeDay</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This function is not finished. It still needs xlwings mark-up to become a User Defined Function. But we can see here that there is nothing genuinely complex about taking three arguments, packaging two into a Pandas Dataframe and then calling EvaluateKoalaModel.</p>
+<p>If we put all the xlwings markup on the above Python function, we can import it as a User Defined Function:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@xw.func</span>
+<span class="nd">@xw.arg</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Name, as a string, of the model which will be evaluated. The Excel cell name / named range&#39;</span><span class="p">)</span>
+<span class="nd">@xw.arg</span><span class="p">(</span><span class="s1">&#39;T_min&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Daily minimum temperature&#39;</span><span class="p">)</span>
+<span class="nd">@xw.arg</span><span class="p">(</span><span class="s1">&#39;T_max&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Daily maximum temperature&#39;</span><span class="p">)</span>
+<span class="nd">@xw.ret</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">DegreeDay</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">T_min</span><span class="p">,</span> <span class="n">T_max</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Function to assemble a dataframe for calculating Degree Day&quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">fk</span><span class="o">.</span><span class="n">isKoalaModelCached</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+        <span class="n">fk</span><span class="o">.</span><span class="n">generateModelGraph</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+
+    <span class="n">inputs_for_DegreeDay</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;T_min&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">T_min</span><span class="p">]),</span> <span class="s1">&#39;T_max&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">T_max</span><span class="p">])})</span>
+    <span class="k">return</span> <span class="n">fk</span><span class="o">.</span><span class="n">EvaluateKoalaModel</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">inputs_for_DegreeDay</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This is essentially all a developer or appropriately skilled data analyst needs to do. The rest is up to the domain expert as it is a case of setting Excel up correctly and then defining the mathematical relationship.</p>
+<p><strong>NOTE</strong>: The mathematical relationship for the equation is not expressed in Python yet. The definition is the responsibility of the domain expert to define in an Excel formula and Koala2 to manage running that definition in Python.</p>
+<p>Although setting Excel up is demonstrated in the worked example in the example document Introduction_Article.PDF I’ll run through it briefly here.</p>
+<p>To set Excel up…</p>
+<p>Define named cells for each of the terms. The keys in the anonymous dict which is used to create inputs_for_DegreeDay need to be the same as the names of the named ranges (cell names) that will be used in the Excel formula.</p>
+<p>To be specific there needs to be an Excel cell named ‘T_min’, another called ‘T_max’. These names need to be global (can be identified in the Manage Names menu of Excel). These cells need to be referenced in the Excel equation - <strong>NOT</strong> the cell address.</p>
+<p>Now we can write an MS Excel formula which will define the relationship between T_min, T_max and T_base. This is the Excel formula for the first GDD equation and is in a cell called Equation_1:</p>
+<blockquote>
+<div><p>=((T_max+T_min)/2)-T_base</p>
+</div></blockquote>
+<p>NOTE: we have used the cell names, not the cell address eg; T_max <strong>not</strong> GDD_formula!B5</p>
+<p>Providing the DegreeDay UDF definition is defined, we can use it in Excel:</p>
+<blockquote>
+<div><p>=DegreeDay(Equation_1, 3, 25)</p>
+</div></blockquote>
+<p>That Excel equation will grab the equation from the call called Equation_1 which is =((T_max+T_min)/2)-T_base, convert the equation to Python, set T_min to 3, T_max to 25, T_base to 10, evaluate the result and return it as a value to the cell.</p>
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">FlyingKoala</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using FlyingKoala</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-flyingkoala-user-defined-functions">1. Using the FlyingKoala User Defined Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-flyingkoala-vba-macros">2. Using the FlyingKoala VBA macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#freestyling-with-flyingkoala">3. Freestyling with FlyingKoala</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Python API</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
+      <li>Next: <a href="api.html" title="next chapter">Python API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Bradley van Ree.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/use.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
