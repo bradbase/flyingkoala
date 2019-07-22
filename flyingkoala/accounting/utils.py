@@ -1,4 +1,4 @@
-# accounting.py
+# utils.py
 import xlwings as xw
 from xlwings import constants
 from openpyxl import utils
