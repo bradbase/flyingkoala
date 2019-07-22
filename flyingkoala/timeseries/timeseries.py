@@ -111,25 +111,3 @@ def TIMEISBETWEEN(keys, below, above, periods):
     time_between['returnable'] = np.vectorize(include_period)(time_between['keys'], below_delta, above_delta, time_between['periods'])
 
     return time_between['returnable']
-
-@xw.func
-@xw.arg('filter_name', xw.Range, doc='The name of the filter for this particular series.')
-@xw.arg('dimension_name', doc='')
-@xw.arg('pass_', doc='')
-@xw.arg('fail_', doc='')
-@xw.arg('action', doc='The action which will be taken when a value is not within constraint.')
-@xw.arg('inputs', xw.Range, doc='This is the value you want to average from.')
-@xw.ret(index=False, header=False, expand='down')
-def FILTERED(filter_name, dimension_name, pass_, fail_, action, inputs):
-    """Filters data"""
-    global koala_models
-
-    if not fk.isKoalaModelCached(filter_name.name.name):
-        fk.generateModelGraph(filter_name)
-
-    current_model = koala_models[filter_name.name.name]
-
-    for item in inputs:
-        passfail = fk.EvaluateKoalaModel_row(filter_name, {dimension_name: item.value}, current_model)
-
-        print(filter_name.name.name, item.address, item.value, passfail)
