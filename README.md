@@ -96,6 +96,7 @@ from flyingkoala.series import *
 - [ ] Document the library of functions
 - [ ] Change intro document - bring TL;DR into line with README.md
 - [ ] Release a beta
+- [ ] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments)
 - [ ] Write an Excel plug-in which uses the xlwings REST interface to manage the model cache
 - [ ] Write a wizard, to launch from the Excel plug-in, which writes and updates the xlwings Python "code"(/imports) for FlyingKoala defined UDFs
 - [ ] Write tests
