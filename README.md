@@ -93,7 +93,6 @@ from flyingkoala.series import *
 ```
 
 # TODO:
-- [ ] Document the library of functions
 - [ ] Change intro document - bring TL;DR into line with README.md
 - [ ] Release a beta
 - [ ] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments)
