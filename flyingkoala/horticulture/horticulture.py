@@ -13,11 +13,11 @@ from flyingkoala import flyingkoala as fk
 def DegreeDay(model, T_min, T_max):
     """Function to assemble a dataframe for calculating Degree Day"""
 
-    if not fk.isKoalaModelCached(model.name.name):
-        fk.generateModelGraph(model)
+    if not fk.is_koala_model_cached(model.name.name):
+        fk.generate_model_graph(model)
 
     inputs_for_DegreeDay = pd.DataFrame({'T_min': np.array([T_min]), 'T_max': np.array([T_max])})
-    return fk.EvaluateKoalaModel(model.name.name, inputs_for_DegreeDay)
+    return fk.evaluate_koala_model(model.name.name, inputs_for_DegreeDay)
 
 @xw.func
 @xw.arg('model', xw.Range, doc='Name, as a string, of the model which will be evaluated. The Excel cell name / named range.')
@@ -27,8 +27,8 @@ def DegreeDay(model, T_min, T_max):
 def DegreeDayDynamicArray(model, T_min, T_max):
     """Function to assemble a dataframe for calculating Degree Day using dynamic arrays"""
 
-    if not fk.isKoalaModelCached(model.name.name):
-        fk.generateModelGraph(model)
+    if not fk.is_koala_model_cached(model.name.name):
+        fk.generate_model_graph(model)
 
     inputs_for_DegreeDay = pd.DataFrame({'T_min': T_min, 'T_max': T_max})
-    return fk.EvaluateKoalaModel(model.name.name, inputs_for_DegreeDay)
+    return fk.evaluate_koala_model(model.name.name, inputs_for_DegreeDay)
