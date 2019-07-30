@@ -97,7 +97,11 @@ from flyingkoala.series import *
 - [ ] Change intro document - bring TL;DR into line with README.md
 - [ ] Release a beta
 - [ ] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments)
-- [ ] Write an Excel plug-in which uses the xlwings REST interface to manage the model cache, and provides the supplied FlyingKoala VBA macros
+- [X] Write an Excel plug-in which uses the xlwings REST interface to manage the model cache, and provides the supplied FlyingKoala VBA macros
+- [ ] Write doco on how to install the add-in by hand
+- [ ] Write a script to install the add-in
+- [ ] Improve add-in. Requires better handling of essentially everything.
+- [ ] Support add-in feature to unload a specific model
 - [ ] Write a wizard, to launch from the Excel plug-in, which writes and updates the xlwings Python "code"(/imports) for FlyingKoala defined UDFs
 - [ ] Write tests
 - [ ] Refactor the timeseries Pandas wrappers
