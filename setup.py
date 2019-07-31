@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="flyingkoala-bradbase",
+    name="flyingkoala",
     version="0.0.2b",
     author="Bradley van Ree",
     author_email="flyingkoala@bradbase.net",
@@ -40,7 +40,7 @@ setuptools.setup(
         'scenario analysis',
         'modelling',
         'model'],
-    url="https://github.com/bradbase/flyingkoala-bradbase",
+    url="https://github.com/bradbase/flyingkoala",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
