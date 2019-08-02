@@ -51,6 +51,7 @@ setuptools.setup(
     install_requires=[
             'xlwings >= 0.15.8',
             'koala2 <=  0.0.31',
+            'sphinx_rtd_theme',
             'numpy >= 1.15.0',
             'pandas >= 0.25.0',
             'openpyxl <= 2.5.3',
