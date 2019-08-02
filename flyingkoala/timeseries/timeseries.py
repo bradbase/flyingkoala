@@ -1,4 +1,6 @@
 
+from datetime import timedelta
+
 import xlwings as xw
 import numpy as np
 import pandas as pd
@@ -34,19 +36,39 @@ def TIMESERIESWINDOWAVERAGE(times, inputs, window=5):
 @xw.arg('times', np.array, doc='This is the range of times')
 @xw.arg('inputs', np.array, doc='This is the value you want to average from.')
 @xw.arg('window', doc='The elements will be kept on this index.')
-@xw.ret(index=False, header=False, expand='down')
+@xw.ret(expand='down')
 def KEEPRECORDS(times, inputs, window=5):
     """Keeps records at an offset determined by window"""
-    def include_value(time, value, window_size):
-        ts = pd.to_datetime(str(time))
-        mymod = np.mod(int(ts.strftime('%M')), window_size)
-        if mymod == np.int32(0):
-            return value
 
-    window_size = int(window)
+    returnable = []
+    ascending = True
     timeseries = pd.DataFrame({'time':times, 'value':inputs})
-    timeseries['returnable'] = np.vectorize(include_value)(timeseries['time'], timeseries['value'], window_size)
-    return timeseries['returnable']
+
+    delta = timedelta(minutes = window)
+
+    if timeseries.index.is_monotonic_increasing:
+        ascending = False
+
+    goal_time = None
+    for index, row in timeseries.iterrows():
+        if goal_time == None:
+            returnable.append([row['value']])
+            if ascending:
+                goal_time = row['time'] + delta
+            else:
+                goal_time = row['time'] - delta
+        else:
+
+            if goal_time - row['time'] == timedelta(milliseconds = 0):
+                returnable.append([row['value']])
+                if ascending:
+                    goal_time = goal_time + delta
+                else:
+                    goal_time = goal_time - delta
+            else:
+                returnable.append([None])
+
+    return returnable
 
 
 @xw.func
