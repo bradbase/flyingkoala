@@ -10,7 +10,7 @@ This guide assumes you have FlyingKoala, the FlyingKoala add-in and xlwings alre
 
 The FlyingKoala Add-In assists users to manage the cache which holds "models" (/equation systems). This is what it looks like.
 
-.. image:: /images/add-in.PNG
+.. image:: ../images/add-in.PNG
   :alt: Add-in menu
 
 Excel file name
