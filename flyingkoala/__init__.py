@@ -8,3 +8,4 @@ from .flyingkoala import evaluate_koala_model
 from .flyingkoala import get_model_cache_count
 from .flyingkoala import get_named_range_count
 from .flyingkoala import get_named_ranges
+from .flyingkoala import prepare_model

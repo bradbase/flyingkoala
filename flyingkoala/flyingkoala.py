@@ -99,6 +99,34 @@ def is_koala_model_cached(model_name):
 
     return model_name in koala_models.keys()
 
+def prepare_model(model_name):
+    """Preparing model name from either a string or an xlwings Range and load it into cache."""
+    global koala_models
+
+    # figure out if we have a named range or a text name of the model
+    extracted_model_name = None
+    if model_name is not None:
+        if model_name.name is None:
+            extracted_model_name = model_name.value
+        else:
+            extracted_model_name = model_name.name.name
+    else:
+        raise Exception('The named range you tried to use does not exist globally in the workbook, if named range exists check spelling.')
+
+    # ensure that model is cached
+    if extracted_model_name not in koala_models.keys():
+        model = None
+        wb = xw.books.active
+        for name in wb.names:
+            if extracted_model_name == name.name:
+                model = xw.Range(extracted_model_name)
+                generate_model_graph(model)
+
+        if model is None:
+            raise Exception('Model "%s" has not been loaded into cache, if named range exists check spelling.' % extracted_model_name)
+
+    return extracted_model_name
+
 @xw.func
 @xw.arg('model_name', doc='Name, as a string, of the model which might be cached.')
 def unload_koala_model_from_cache(model_name):
