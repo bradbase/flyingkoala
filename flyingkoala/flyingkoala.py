@@ -2,20 +2,22 @@
 import xlwings as xw
 from koala.ExcelCompiler import ExcelCompiler
 from koala.tokenizer import ExcelParser
+from koala.Spreadsheet import Spreadsheet
 import numpy as np
 import pandas as pd
 
-ignore_sheets = None
-excel_file_name = None
+ignore_sheets = []
+excel_file_name = xw.books.active.fullname
 
 koala_models = {}
-spreadsheet = None
+
+excel_compiler = None
 
 @xw.sub
 def generate_model_graph(model, refresh = False):
     """The function that extracts a graph of a given model from the Spreadsheet"""
     global koala_models
-    global spreadsheet
+    global excel_compiler
 
     if isinstance(model, str):
         if refresh == False and model in koala_models.keys():
@@ -28,7 +30,8 @@ def generate_model_graph(model, refresh = False):
     tokens = parser.parse(model.formula)
     print(parser.prettyprint())
     inputs = parser.getOperandRanges()
-    koala_models[str(model.name.name)] = excel_compiler.gen_graph(inputs= inputs, outputs= [model.name.name])
+    # koala_models[str(model.name.name)] = excel_compiler.gen_graph(inputs= inputs, outputs= [model.name.name])
+    koala_models[str(model.name.name)] = excel_compiler.gen_graph()
 
     print("Successfully loaded model %s" % model.name)
     return 'Cached Model %s' % model.name
@@ -39,7 +42,7 @@ def reload_koala(file_name, ignore_sheets= None, bootstrap_equations= None):
     """Loads the Excel workbook into a koala Spreadsheet object"""
     global excel_compiler
     print("Loading workbook")
-    excel_compiler = ExcelCompiler(file_name, ignore_sheets=ignore_sheets)
+    excel_compiler = Spreadsheet.from_file_name(file_name, ignore_sheets=ignore_sheets)
     excel_compiler.clean_pointer()
     print("Workbook '%s' has been loaded." % file_name)
     print("Ignored worksheets %s" % ignore_sheets)
@@ -58,6 +61,13 @@ def get_model_cache_count():
     return len(koala_models.keys())
 
 @xw.func
+def get_named_range_count():
+
+    wb = xw.books.active
+
+    return len(wb.names)
+
+@xw.func
 def get_cached_koala_model_names():
     global koala_models
 
@@ -66,6 +76,19 @@ def get_cached_koala_model_names():
         names_of_cached_models.append(model_name)
 
     return names_of_cached_models
+
+@xw.func
+def get_named_ranges():
+
+    returnable = ""
+    wb = xw.books.active
+
+    for name in wb.names:
+        returnable += "\r\n%s" % (name.name)
+
+    print(returnable)
+
+    return returnable
 
 @xw.func
 @xw.arg('model_name', doc='Name, as a string, of the model which might be cached.')
