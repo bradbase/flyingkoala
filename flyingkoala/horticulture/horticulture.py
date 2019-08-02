@@ -85,7 +85,7 @@ def DegreeDayDynamicArrayByName(model_name, T_min, T_max):
 def DegreeDay(model_name, T_min, T_max):
     """Function to assemble a dataframe for calculating Degree Day. Takes either a name of a model or the named range itself."""
     try:
-        prepared_model_name = fk.prepare_model(model_name)
+        prepared_model_name = fk.load_model(model_name)
 
         # format the equation terms, evalueate the equation and return the result.
         inputs_for_DegreeDay = pd.DataFrame({'T_min': np.array([T_min]), 'T_max': np.array([T_max])})
@@ -103,7 +103,7 @@ def DegreeDay(model_name, T_min, T_max):
 def DegreeDayDynamicArray(model_name, T_min, T_max):
     """Function to assemble a dataframe for calculating Degree Day using dynamic arrays. Takes either a name of a model or the named range itself."""
     try:
-        prepared_model_name = fk.prepare_model(model_name)
+        prepared_model_name = fk.load_model(model_name)
 
         # format the equation terms, evalueate the equation and return the result.
         inputs_for_DegreeDay = pd.DataFrame({'T_min': T_min, 'T_max': T_max})
@@ -111,4 +111,3 @@ def DegreeDayDynamicArray(model_name, T_min, T_max):
 
     except Exception as err:
             return str(err)
-            

@@ -99,7 +99,7 @@ def is_koala_model_cached(model_name):
 
     return model_name in koala_models.keys()
 
-def prepare_model(model_name):
+def load_model(model_name):
     """Preparing model name from either a string or an xlwings Range and load it into cache."""
     global koala_models
 
@@ -111,7 +111,7 @@ def prepare_model(model_name):
         else:
             extracted_model_name = model_name.name.name
     else:
-        raise Exception('The named range you tried to use does not exist globally in the workbook, if named range exists check spelling.')
+        raise Exception('The range you tried to use does not exist in the workbook, if named range exists check spelling.')
 
     # ensure that model is cached
     if extracted_model_name not in koala_models.keys():
