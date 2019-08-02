@@ -120,7 +120,7 @@ For doing some time series transformation you would have a module that would loo
 
   import xlwings as xw
   from flyingkoala import flyingkoala
-  from flyingkoala.series import *
+  from flyingkoala.timeseries import *
 
 For doing some time series transformation while calculating Growing Degrees-Day you would have a module that would look like this:
 
@@ -129,7 +129,7 @@ For doing some time series transformation while calculating Growing Degrees-Day 
   import xlwings as xw
   from flyingkoala import flyingkoala
   from flyingkoala.horticulture import *
-  from flyingkoala.series import *
+  from flyingkoala.timeseries import *
 
 4. Using the FlyingKoala VBA macros
 -----------------------------------
