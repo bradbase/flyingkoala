@@ -97,10 +97,10 @@ from flyingkoala.series import *
 
 # TODO:
 - [ ] Change intro document - bring TL;DR into line with README.md
-- [ ] Release a beta
-- [ ] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments)
+- [x] Release a beta
+- [-] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments) **Can't be done**
 - [X] Write an Excel plug-in which uses the xlwings REST interface to manage the model cache, and provides the supplied FlyingKoala VBA macros
-- [ ] Write doco on how to install the add-in by hand
+- [X] Write doco on how to install the add-in by hand
 - [ ] Write a script to install the add-in
 - [ ] Improve add-in. Requires better handling of essentially everything.
 - [ ] Support add-in feature to unload a specific model
