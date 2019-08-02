@@ -6,12 +6,13 @@ from koala.Spreadsheet import Spreadsheet
 import numpy as np
 import pandas as pd
 
-ignore_sheets = []
-excel_file_name = xw.books.active.fullname
+workbook = xw.books.active
+auto_load = workbook.sheets['FlyingKoala.conf'].range('B3')
 
-koala_models = {}
-
+excel_file_name = None
 excel_compiler = None
+ignore_sheets = []
+koala_models = {}
 
 @xw.sub
 def generate_model_graph(model, refresh = False):
@@ -47,7 +48,10 @@ def reload_koala(file_name, ignore_sheets= None, bootstrap_equations= None):
     print("Workbook '%s' has been loaded." % file_name)
     print("Ignored worksheets %s" % ignore_sheets)
 
-# reload_koala(excel_file_name, ignore_sheets=ignore_sheets)
+
+if auto_load.value == True:
+    excel_file_name = workbook.fullname
+    reload_koala(excel_file_name, ignore_sheets=ignore_sheets)
 
 @xw.func
 def reset_koala_model_cache():
@@ -71,9 +75,9 @@ def get_named_range_count():
 def get_cached_koala_model_names():
     global koala_models
 
-    names_of_cached_models = []
+    names_of_cached_models = ""
     for model_name in koala_models.keys():
-        names_of_cached_models.append(model_name)
+        names_of_cached_models += "\r\n%s" % (model_name)
 
     return names_of_cached_models
 
@@ -85,8 +89,6 @@ def get_named_ranges():
 
     for name in wb.names:
         returnable += "\r\n%s" % (name.name)
-
-    print(returnable)
 
     return returnable
 

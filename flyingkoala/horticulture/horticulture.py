@@ -43,6 +43,7 @@ def DegreeDayModelByName(model_name, T_min, T_max):
     """Function to assemble a dataframe for calculating Degree Day"""
 
     if model_name not in fk.koala_models.keys():
+        model = None
         wb = xw.books.active
         for name in wb.names:
             if model_name == name.name:
@@ -50,7 +51,7 @@ def DegreeDayModelByName(model_name, T_min, T_max):
                 fk.generate_model_graph(model)
 
         if model is None:
-            return 'Model %s has not been loaded into cache, if named range exists check spelling.' % model_name
+            return 'Model "%s" has not been loaded into cache, if named range exists check spelling.' % model_name
 
     inputs_for_DegreeDay = pd.DataFrame({'T_min': np.array([T_min]), 'T_max': np.array([T_max])})
     return fk.evaluate_koala_model(model_name, inputs_for_DegreeDay)
@@ -65,6 +66,7 @@ def DegreeDayDynamicArrayByName(model_name, T_min, T_max):
     """Function to assemble a dataframe for calculating Degree Day using dynamic arrays"""
 
     if model_name not in fk.koala_models.keys():
+        model = None
         wb = xw.books.active
         for name in wb.names:
             if model_name == name.name:
@@ -72,7 +74,7 @@ def DegreeDayDynamicArrayByName(model_name, T_min, T_max):
                 fk.generate_model_graph(model)
 
         if model is None:
-            return 'Model %s has not been loaded into cache, if named range exists check spelling.' % model_name
+            return 'Model "%s" has not been loaded into cache, if named range exists check spelling.' % model_name
 
     inputs_for_DegreeDay = pd.DataFrame({'T_min': T_min, 'T_max': T_max})
     return fk.evaluate_koala_model(model_name, inputs_for_DegreeDay)
