@@ -133,9 +133,7 @@ For doing some time series transformation while calculating Growing Degrees-Day 
 
 4. Using the FlyingKoala VBA macros
 -----------------------------------
-Providing the macro functions you are expecting to use already exist in the FlyingKoala library they will be installed with the FlyingKoala plug-in.
-
-Follow the instructions from xlwings to install their plug-in into your workbook. And then follow the instructions from xlwings to install FlyingKoala plug-in into your workbook.
+Providing the macro functions you are expecting to use already exist in the FlyingKoala library they will be installed with FlyingKoala.
 
 You'll want to be familiar with writing VBA and reading API style documentation for this one.
 
