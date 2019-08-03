@@ -1,46 +1,241 @@
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta charset="utf-8" />
-    <title>Using FlyingKoala &#8212; FlyingKoala 0.0.0 documentation</title>
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Using FlyingKoala &mdash; FlyingKoala 0.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API" href="api.html" />
-    <link rel="prev" title="Installation" href="installation.html" />
+    <link rel="prev" title="Install the library" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
           
 
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> FlyingKoala
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Install the library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html#install-the-add-in">Install the add-in</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Using FlyingKoala</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-flyingkoala-add-in">1. The FlyingKoala Add-In</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#excel-file-name">Excel file name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ignore-sheets">Ignore Sheets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reload-koala">Reload Koala</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#clear-model-cache">Clear Model Cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-cached-model-names">Get Cached Model Names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#get-workbook-names">Get workbook Names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-flyingkoala-configuration">2. The FlyingKoala Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Excel file name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Ignore Sheets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#auto-load-koala">Auto load Koala</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-flyingkoala-user-defined-functions">3. Using the FlyingKoala User Defined Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-flyingkoala-vba-macros">4. Using the FlyingKoala VBA macros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#freestyling-with-flyingkoala">5. Freestyling with FlyingKoala</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">FlyingKoala</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Using FlyingKoala</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/use.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
             
   <div class="section" id="using-flyingkoala">
 <span id="use"></span><h1>Using FlyingKoala<a class="headerlink" href="#using-flyingkoala" title="Permalink to this headline">¶</a></h1>
-<p>This guide assumes you have FlyingKoala and xlwings already installed. If that’s not the case, head over to <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Installation</span></a>.</p>
+<p>This guide assumes you have FlyingKoala, the FlyingKoala add-in and xlwings already installed. If that’s not the case, head over to <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Install the library</span></a>.</p>
+<div class="section" id="the-flyingkoala-add-in">
+<h2>1. The FlyingKoala Add-In<a class="headerlink" href="#the-flyingkoala-add-in" title="Permalink to this headline">¶</a></h2>
+<p>The FlyingKoala Add-In assists users to manage the cache which holds “models” (/equation systems). This is what it looks like.</p>
+<img alt="Add-in menu" src="_images/add-in.PNG" />
+<div class="section" id="excel-file-name">
+<h3>Excel file name<a class="headerlink" href="#excel-file-name" title="Permalink to this headline">¶</a></h3>
+<p>This is the name of the workbook file. This setting is expected to auto-fill.</p>
+<p>In the future we expect to be able to load models from other Excel files which is why this configuration is here.</p>
+<a class="reference internal image-reference" href="_images/add-in_excel_file_name.PNG"><img alt="Add-in menu excel file name" src="_images/add-in_excel_file_name.PNG" style="width: 400px;" /></a>
+</div>
+<div class="section" id="ignore-sheets">
+<h3>Ignore Sheets<a class="headerlink" href="#ignore-sheets" title="Permalink to this headline">¶</a></h3>
+<p>These are worksheets you would like to not load into the koala cache. Most likely used for worksheets which have your raw data, or worksheets which are not currently being used in the modelling you’re working on.</p>
+<a class="reference internal image-reference" href="_images/add-in_ignore_sheets.PNG"><img alt="Add-in menu ignore sheets" src="_images/add-in_ignore_sheets.PNG" style="width: 400px;" /></a>
+</div>
+<div class="section" id="reload-koala">
+<h3>Reload Koala<a class="headerlink" href="#reload-koala" title="Permalink to this headline">¶</a></h3>
+<p>FlyingKoala caches parts of a specified spreadsheet (eg; the one named in “Excel config name”). To extract the part you are interested in, first Koala needs to have a look at the spreadsheet you are interested in. This button does that initial loading. If the spreadsheet has been loaded, this button will load it again. Great for when a formula in the spreadsheet has changed.</p>
+<a class="reference internal image-reference" href="_images/add-in_reload_koala.PNG"><img alt="Add-in button to load the specified spreadsheet." src="_images/add-in_reload_koala.PNG" style="width: 75px;" /></a>
+</div>
+<div class="section" id="clear-model-cache">
+<h3>Clear Model Cache<a class="headerlink" href="#clear-model-cache" title="Permalink to this headline">¶</a></h3>
+<p>This button clears the FlyingKoala cache of all the loaded models. Handy if you want to re-load some of the equations.</p>
+<a class="reference internal image-reference" href="_images/add-in_clear_model_cache.PNG"><img alt="Add-in button to load the specified spreadsheet." src="_images/add-in_clear_model_cache.PNG" style="width: 75px;" /></a>
+</div>
+<div class="section" id="get-cached-model-names">
+<h3>Get Cached Model Names<a class="headerlink" href="#get-cached-model-names" title="Permalink to this headline">¶</a></h3>
+<p>A message box will appear naming all the models which have been loaded into the FlyingKoala model cache.</p>
+<a class="reference internal image-reference" href="_images/add-in_get_cached_model_names.PNG"><img alt="Add-in button to display the names of the models which are currently in the FlyingKoala cache." src="_images/add-in_get_cached_model_names.PNG" style="width: 75px;" /></a>
+</div>
+<div class="section" id="get-workbook-names">
+<h3>Get workbook Names<a class="headerlink" href="#get-workbook-names" title="Permalink to this headline">¶</a></h3>
+<p>A message box will appear naming all the named ranges xlwings has access to in the loaded workbook. This helps you check spelling on some of the named ranges. This list can also be seen, and managed, in the Formulas ==&gt; Name Manager menu of Excel.</p>
+<a class="reference internal image-reference" href="_images/add-in_get_workbook_names.PNG"><img alt="Add-in button to display the named ranges available to xlwings." src="_images/add-in_get_workbook_names.PNG" style="width: 75px;" /></a>
+</div>
+</div>
+<div class="section" id="the-flyingkoala-configuration">
+<h2>2. The FlyingKoala Configuration<a class="headerlink" href="#the-flyingkoala-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The FlyingKoala configuration worksheet assists users to manage the relationship between koala and xlwings. It must be named FlyingKoala.conf and this is what it looks like.</p>
+<img alt="Add-in menu and configuration worksheet" src="_images/conf.PNG" />
+<p>Currently the config management uses fixed cell references, so don’t move anything. (<strong>TODO: open for contribution. There’s an example in xlwings for inspiration.</strong>)</p>
+<p>This is not kept in an external file as the FlyingKoala operations are generally workbook specific. You are likely to want to have this workbook behave in a particular way – especially when someone opens the file and re-calc while they are using it.</p>
+<div class="section" id="id1">
+<h3>Excel file name<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This is the name of the workbook file. This setting is expected to auto-fill, but will also be over-written by whatever gets put in the corresponding field in the Add-In.</p>
+</div>
+<div class="section" id="id2">
+<h3>Ignore Sheets<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>These are a comma delimited list of worksheets you want to have Koala ignore when it loads your spreadsheet into cache. If there is a space in the worksheet name you’ll need to use double quotes.</p>
+</div>
+<div class="section" id="auto-load-koala">
+<h3>Auto load Koala<a class="headerlink" href="#auto-load-koala" title="Permalink to this headline">¶</a></h3>
+<p>This will allow or deny xlwings the ability to load the workbook when you load UDFs. Basically, it’s telling xlwings that when the Python interpreter service starts it’s allowed to initialise Koala or not.</p>
+<ul class="simple">
+<li><p>TRUE: the spreadsheet will be loaded into Koala when xlwings interpreter service starts.</p></li>
+<li><p>FALSE: The spreadsheet will _not_ be loaded into Koala when xlwings interpreter service starts.</p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="using-the-flyingkoala-user-defined-functions">
-<h2>1. Using the FlyingKoala User Defined Functions<a class="headerlink" href="#using-the-flyingkoala-user-defined-functions" title="Permalink to this headline">¶</a></h2>
-<p>Providing the User Defined Functions (UDFs) you are expecting to use already exist in the FlyingKoala library you can simply import them.</p>
-<p>Follow the instructions from xlwings to install their plug-in into your workbook.</p>
-<p>Make sure you have the dependencies installed for the FlyingKoala module you want to use. Notes on this can be found in <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Installation</span></a>.</p>
+<h2>3. Using the FlyingKoala User Defined Functions<a class="headerlink" href="#using-the-flyingkoala-user-defined-functions" title="Permalink to this headline">¶</a></h2>
+<p>Providing the User Defined Functions (UDFs) you are expecting to use already exist in the FlyingKoala library you can simply import them. They won’t be loaded at this point, but will become available for use in Excel like any other formula. An equation will become loaded into Koala cache as a model when you use it.</p>
+<p>Make sure you have the dependencies installed for the FlyingKoala module you want to use. Notes on this can be found in <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Install the library</span></a>.</p>
 <p>For calculating Growing Degree-Days you would have a module that would look like this:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
 <span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
@@ -50,26 +245,25 @@
 <p>For doing some time series transformation you would have a module that would look like this:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
 <span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
-<span class="kn">from</span> <span class="nn">flyingkoala.series</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flyingkoala.timeseries</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>For doing some time series transformation while calculating Growing Degrees-Day you would have a module that would look like this:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
 <span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
 <span class="kn">from</span> <span class="nn">flyingkoala.horticulture</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">flyingkoala.series</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">flyingkoala.timeseries</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="using-the-flyingkoala-vba-macros">
-<h2>2. Using the FlyingKoala VBA macros<a class="headerlink" href="#using-the-flyingkoala-vba-macros" title="Permalink to this headline">¶</a></h2>
-<p>Providing the macro functions you are expecting to use already exist in the FlyingKoala library they will be installed with the FlyingKoala plug-in.</p>
-<p>Follow the instructions from xlwings to install their plug-in into your workbook. And then follow the instructions from xlwings to install FlyingKoala plug-in into your workbook.</p>
+<h2>4. Using the FlyingKoala VBA macros<a class="headerlink" href="#using-the-flyingkoala-vba-macros" title="Permalink to this headline">¶</a></h2>
+<p>Providing the macro functions you are expecting to use already exist in the FlyingKoala library they will be installed with FlyingKoala.</p>
 <p>You’ll want to be familiar with writing VBA and reading API style documentation for this one.</p>
 <p>Once everything is installed correctly you can call the FlyingKoala VBA functions as you normally do with VBA.</p>
 </div>
 <div class="section" id="freestyling-with-flyingkoala">
-<h2>3. Freestyling with FlyingKoala<a class="headerlink" href="#freestyling-with-flyingkoala" title="Permalink to this headline">¶</a></h2>
+<h2>5. Freestyling with FlyingKoala<a class="headerlink" href="#freestyling-with-flyingkoala" title="Permalink to this headline">¶</a></h2>
 <p>If the functionality you want isn’t yet supported in a FlyingKoala module, you’ll need to write your own (and maybe put it forward to be included in FlyingKoala :D).</p>
 <p>This is the advanced approach. It has a rather steep curve. Once you ‘get it’ things aren’t terrible, but I do admit there are a lot of moving parts. The worked example in the example document Introduction_Article.PDF is a great resource.</p>
 <p>From here on you’ll want to be an particularly familiar with;</p>
@@ -148,78 +342,52 @@
 </div>
 
 
+           </div>
+           
           </div>
-          
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">FlyingKoala</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Using FlyingKoala</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#using-the-flyingkoala-user-defined-functions">1. Using the FlyingKoala User Defined Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#using-the-flyingkoala-vba-macros">2. Using the FlyingKoala VBA macros</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#freestyling-with-flyingkoala">3. Freestyling with FlyingKoala</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="installation.html" title="previous chapter">Installation</a></li>
-      <li>Next: <a href="api.html" title="next chapter">API</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
-      <input type="submit" value="Go" />
-    </form>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Install the library" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
     </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  
 
+  <hr/>
 
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Bradley van Ree
 
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
-
-
-
+</footer>
 
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2019, Bradley van Ree.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.1.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
-      
-      |
-      <a href="_sources/use.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
     
-  </body>
+   
+
+</body>
 </html>

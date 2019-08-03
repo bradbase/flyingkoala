@@ -3,13 +3,106 @@
 Using FlyingKoala
 =================
 
-This guide assumes you have FlyingKoala and xlwings already installed. If that's not the case, head over to :ref:`installation`.
+This guide assumes you have FlyingKoala, the FlyingKoala add-in and xlwings already installed. If that's not the case, head over to :ref:`installation`.
 
-1. Using the FlyingKoala User Defined Functions
------------------------------------------------------------
-Providing the User Defined Functions (UDFs) you are expecting to use already exist in the FlyingKoala library you can simply import them.
+1. The FlyingKoala Add-In
+-------------------------
 
-Follow the instructions from xlwings to install their plug-in into your workbook.
+The FlyingKoala Add-In assists users to manage the cache which holds "models" (/equation systems). This is what it looks like.
+
+.. image:: /images/add-in.PNG
+  :alt: Add-in menu
+
+Excel file name
+^^^^^^^^^^^^^^^
+
+This is the name of the workbook file. This setting is expected to auto-fill.
+
+In the future we expect to be able to load models from other Excel files which is why this configuration is here.
+
+.. image:: /images/add-in_excel_file_name.PNG
+  :width: 400
+  :alt: Add-in menu excel file name
+
+
+Ignore Sheets
+^^^^^^^^^^^^^
+
+These are worksheets you would like to not load into the koala cache. Most likely used for worksheets which have your raw data, or worksheets which are not currently being used in the modelling you're working on.
+
+.. image:: /images/add-in_ignore_sheets.PNG
+  :width: 400
+  :alt: Add-in menu ignore sheets
+
+Reload Koala
+^^^^^^^^^^^^
+
+FlyingKoala caches parts of a specified spreadsheet (eg; the one named in "Excel config name"). To extract the part you are interested in, first Koala needs to have a look at the spreadsheet you are interested in. This button does that initial loading. If the spreadsheet has been loaded, this button will load it again. Great for when a formula in the spreadsheet has changed.
+
+.. image:: /images/add-in_reload_koala.PNG
+  :width: 75
+  :alt: Add-in button to load the specified spreadsheet.
+
+Clear Model Cache
+^^^^^^^^^^^^^^^^^
+
+This button clears the FlyingKoala cache of all the loaded models. Handy if you want to re-load some of the equations.
+
+.. image:: /images/add-in_clear_model_cache.PNG
+  :width: 75
+  :alt: Add-in button to load the specified spreadsheet.
+
+Get Cached Model Names
+^^^^^^^^^^^^^^^^^^^^^^
+
+A message box will appear naming all the models which have been loaded into the FlyingKoala model cache.
+
+.. image:: /images/add-in_get_cached_model_names.PNG
+  :width: 75
+  :alt: Add-in button to display the names of the models which are currently in the FlyingKoala cache.
+
+Get workbook Names
+^^^^^^^^^^^^^^^^^^
+
+A message box will appear naming all the named ranges xlwings has access to in the loaded workbook. This helps you check spelling on some of the named ranges. This list can also be seen, and managed, in the Formulas ==> Name Manager menu of Excel.
+
+.. image:: /images/add-in_get_workbook_names.PNG
+  :width: 75
+  :alt: Add-in button to display the named ranges available to xlwings.
+
+2. The FlyingKoala Configuration
+--------------------------------
+
+The FlyingKoala configuration worksheet assists users to manage the relationship between koala and xlwings. It must be named FlyingKoala.conf and this is what it looks like.
+
+.. image:: /images/conf.PNG
+  :alt: Add-in menu and configuration worksheet
+
+Currently the config management uses fixed cell references, so don't move anything. (**TODO: open for contribution. There's an example in xlwings for inspiration.**)
+
+This is not kept in an external file as the FlyingKoala operations are generally workbook specific. You are likely to want to have this workbook behave in a particular way -- especially when someone opens the file and re-calc while they are using it.
+
+Excel file name
+^^^^^^^^^^^^^^^
+
+This is the name of the workbook file. This setting is expected to auto-fill, but will also be over-written by whatever gets put in the corresponding field in the Add-In.
+
+Ignore Sheets
+^^^^^^^^^^^^^
+
+These are a comma delimited list of worksheets you want to have Koala ignore when it loads your spreadsheet into cache. If there is a space in the worksheet name you'll need to use double quotes.
+
+Auto load Koala
+^^^^^^^^^^^^^^^
+
+This will allow or deny xlwings the ability to load the workbook when you load UDFs. Basically, it's telling xlwings that when the Python interpreter service starts it's allowed to initialise Koala or not.
+
+* TRUE: the spreadsheet will be loaded into Koala when xlwings interpreter service starts.
+* FALSE: The spreadsheet will _not_ be loaded into Koala when xlwings interpreter service starts.
+
+3. Using the FlyingKoala User Defined Functions
+-----------------------------------------------
+Providing the User Defined Functions (UDFs) you are expecting to use already exist in the FlyingKoala library you can simply import them. They won't be loaded at this point, but will become available for use in Excel like any other formula. An equation will become loaded into Koala cache as a model when you use it.
 
 Make sure you have the dependencies installed for the FlyingKoala module you want to use. Notes on this can be found in :ref:`installation`.
 
@@ -27,7 +120,7 @@ For doing some time series transformation you would have a module that would loo
 
   import xlwings as xw
   from flyingkoala import flyingkoala
-  from flyingkoala.series import *
+  from flyingkoala.timeseries import *
 
 For doing some time series transformation while calculating Growing Degrees-Day you would have a module that would look like this:
 
@@ -36,20 +129,18 @@ For doing some time series transformation while calculating Growing Degrees-Day 
   import xlwings as xw
   from flyingkoala import flyingkoala
   from flyingkoala.horticulture import *
-  from flyingkoala.series import *
+  from flyingkoala.timeseries import *
 
-2. Using the FlyingKoala VBA macros
+4. Using the FlyingKoala VBA macros
 -----------------------------------
-Providing the macro functions you are expecting to use already exist in the FlyingKoala library they will be installed with the FlyingKoala plug-in.
-
-Follow the instructions from xlwings to install their plug-in into your workbook. And then follow the instructions from xlwings to install FlyingKoala plug-in into your workbook.
+Providing the macro functions you are expecting to use already exist in the FlyingKoala library they will be installed with FlyingKoala.
 
 You'll want to be familiar with writing VBA and reading API style documentation for this one.
 
 Once everything is installed correctly you can call the FlyingKoala VBA functions as you normally do with VBA.
 
 
-3. Freestyling with FlyingKoala
+5. Freestyling with FlyingKoala
 --------------------------------
 If the functionality you want isn't yet supported in a FlyingKoala module, you'll need to write your own (and maybe put it forward to be included in FlyingKoala :D).
 
