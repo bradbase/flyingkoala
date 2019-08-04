@@ -165,19 +165,19 @@ Dynamic Arrays are part of Excel but are going to help us a great deal when it c
 
 For the Dynamic Array approach
 
-  =DegreeDay(model_name, T_min, T_max)
+  =DegreeDayDynamicArray(model_name, T_min, T_max)
 
 can now become something like
 
-  =DegreeDay(Equation_1, $B2:$B366, $C2:$C366)
+  =DegreeDayDynamicArray(Equation_1, $B2:$B366, $C2:$C366)
 
 The ranges for T_min and T_max **must** be the same shape. eg; they need to have the same number of elements else you'll get an error. They don't need to be ranges next to each other. Knowing this, the below can be understood as a valid expression;
 
-  =DegreeDay(Equation_1, $B2:$B366, $E2:$E366)
+  =DegreeDayDynamicArray(Equation_1, $B2:$B366, $E2:$E366)
 
 Although I have no idea why this would be wanted, it is valid;
 
-  =DegreeDay(Equation_1, $B2:$B366, $G5:$G369)
+  =DegreeDayDynamicArray(Equation_1, $B2:$B366, $G5:$G369)
 
 And so we can see the workings for the vanilla case Equation_1;
 
@@ -197,11 +197,11 @@ There is one more feature of these UDFs which is quite valuable and it stems fro
 
 To take the vanilla example for Equation_1 above;
 
-  =DegreeDay(Equation_1, $B2:$B366, $C2:$C366)
+  =DegreeDayDynamicArray(Equation_1, $B2:$B366, $C2:$C366)
 
 may become
 
-  =DegreeDay($E$1, $B2:$B366, $C2:$C366)
+  =DegreeDayDynamicArray($E$1, $B2:$B366, $C2:$C366)
 
 which defines the name of the column as the model name which the column is using.
 
@@ -211,11 +211,11 @@ which defines the name of the column as the model name which the column is using
 
 And, of course, same for Equation_2
 
-  =DegreeDay(Equation_2, $B2:$B366, $C2:$C366)
+  =DegreeDayDynamicArray(Equation_2, $B2:$B366, $C2:$C366)
 
 may become
 
-  =DegreeDay($G$1, $B2:$B366, $C2:$C366)
+  =DegreeDayDynamicArray($G$1, $B2:$B366, $C2:$C366)
 
 .. image:: /images/degreedaydynamicarray_equation_2_headings.png
   :width: 600
@@ -223,6 +223,6 @@ may become
 
 It is also valid to define yet another named range
 
-  =DegreeDay(active_degree_day_model, $B2:$B366, $C2:$C366)
+  =DegreeDayDynamicArray(active_degree_day_model, $B2:$B366, $C2:$C366)
 
 Where active_degree_day_model is a named range somewhere in the workbook, maybe on a user editable worksheet formulating your assumptions.
