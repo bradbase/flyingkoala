@@ -205,7 +205,7 @@ may become
 
 which defines the name of the column as the model name which the column is using.
 
-.. image:: /images/degreedaydynamicarray_equation_1_heading.png
+.. image:: /images/degreedaydynamicarray_equation_1_headings.png
   :width: 600
   :alt: Using DegreeDayDynamicArray Heading for Equation_1
 
@@ -217,7 +217,7 @@ may become
 
   =DegreeDay($G$1, $B2:$B366, $C2:$C366)
 
-.. image:: /images/degreedaydynamicarray_equation_2_heading.png
+.. image:: /images/degreedaydynamicarray_equation_2_headings.png
   :width: 600
   :alt: Using DegreeDayDynamicArray Heading for Equation_2
 
