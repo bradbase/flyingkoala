@@ -5,7 +5,7 @@ API
 
 User Defined Functions
 ----------------------
-These are the User Defined Functions UDFs that come with FlyingKoala.a
+These are the User Defined Functions UDFs that come with FlyingKoala.
 
 bom
 ^^^^^^
