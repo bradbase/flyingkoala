@@ -40,8 +40,7 @@ extensions = ['recommonmark',
     'sphinx.ext.autodoc',
     'sphinx.ext.todo',
     'sphinx.ext.autosummary',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.inheritance_diagram'
+    'sphinx.ext.viewcode'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
