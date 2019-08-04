@@ -11,7 +11,7 @@ The worked example for the timeseries module demonstrates the use of FlyingKoala
 The FlyingKoala Add-In assists users to manage the cache which holds "models" (/equation systems). This is what it looks like.
 
 .. image:: /images/addin.png
-  :alt: Add-in menu
+  :alt: Add\-in menu
 
 Excel file name
 ^^^^^^^^^^^^^^^
