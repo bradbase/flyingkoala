@@ -22,9 +22,7 @@ In the future we expect to be able to load models from other Excel files which i
 
 .. image:: /images/addin_excel_file_name.png
   :width: 400
-  :alt: Add-in menu excel file name
-
-
+  :alt: Add-in menu excel file name j
 
   For doing some time series transformation you would have a module that would look like this:
 

@@ -58,8 +58,8 @@ First up define the 'constant' terms. Constant is in quotes as these are values 
 In our case this is the base temperature, :math:`T_{base}`. Usually 10 Degrees Celsius but doesn't necessarily need to be.
 
 .. image:: /images/t_base.png
- :width: 400
- :alt: Definition of T_base
+  :width: 400
+  :alt: Definition of T_base
 
 Next up are the equation's variable terms. These are assured to change.
 
