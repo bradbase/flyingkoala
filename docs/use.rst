@@ -10,7 +10,7 @@ This guide assumes you have FlyingKoala, the FlyingKoala add-in and xlwings alre
 
 The FlyingKoala Add-In assists users to manage the cache which holds "models" (/equation systems). This is what it looks like.
 
-.. image:: ../images/add-in.PNG
+.. image:: /images/addin.png
   :alt: Add-in menu
 
 Excel file name
@@ -20,7 +20,7 @@ This is the name of the workbook file. This setting is expected to auto-fill.
 
 In the future we expect to be able to load models from other Excel files which is why this configuration is here.
 
-.. image:: /images/add-in_excel_file_name.PNG
+.. image:: /images/addin_excel_file_name.png
   :width: 400
   :alt: Add-in menu excel file name
 
@@ -30,7 +30,7 @@ Ignore Sheets
 
 These are worksheets you would like to not load into the koala cache. Most likely used for worksheets which have your raw data, or worksheets which are not currently being used in the modelling you're working on.
 
-.. image:: /images/add-in_ignore_sheets.PNG
+.. image:: /images/addin_ignore_sheets.png
   :width: 400
   :alt: Add-in menu ignore sheets
 
@@ -39,7 +39,7 @@ Reload Koala
 
 FlyingKoala caches parts of a specified spreadsheet (eg; the one named in "Excel config name"). To extract the part you are interested in, first Koala needs to have a look at the spreadsheet you are interested in. This button does that initial loading. If the spreadsheet has been loaded, this button will load it again. Great for when a formula in the spreadsheet has changed.
 
-.. image:: /images/add-in_reload_koala.PNG
+.. image:: /images/addin_reload_koala.png
   :width: 75
   :alt: Add-in button to load the specified spreadsheet.
 
@@ -48,7 +48,7 @@ Clear Model Cache
 
 This button clears the FlyingKoala cache of all the loaded models. Handy if you want to re-load some of the equations.
 
-.. image:: /images/add-in_clear_model_cache.PNG
+.. image:: /images/addin_clear_model_cache.png
   :width: 75
   :alt: Add-in button to load the specified spreadsheet.
 
@@ -57,25 +57,36 @@ Get Cached Model Names
 
 A message box will appear naming all the models which have been loaded into the FlyingKoala model cache.
 
-.. image:: /images/add-in_get_cached_model_names.PNG
+.. image:: /images/addin_get_cached_model_names.png
   :width: 75
   :alt: Add-in button to display the names of the models which are currently in the FlyingKoala cache.
+
 
 Get workbook Names
 ^^^^^^^^^^^^^^^^^^
 
 A message box will appear naming all the named ranges xlwings has access to in the loaded workbook. This helps you check spelling on some of the named ranges. This list can also be seen, and managed, in the Formulas ==> Name Manager menu of Excel.
 
-.. image:: /images/add-in_get_workbook_names.PNG
+.. image:: /images/addin_get_workbook_names.png
   :width: 75
   :alt: Add-in button to display the named ranges available to xlwings.
+
+
+Import Functions
+^^^^^^^^^^^^^^^^
+
+This is an convenience button. It calls the xlwings UDF Import Functions method. It saves having to move between Add-Ins while developing UDFs.
+
+.. image:: /images/addin_import_functions.png
+  :width: 75
+  :alt: Add-in button to call the xlwings Import Fucntions methods.
 
 2. The FlyingKoala Configuration
 --------------------------------
 
 The FlyingKoala configuration worksheet assists users to manage the relationship between koala and xlwings. It must be named FlyingKoala.conf and this is what it looks like.
 
-.. image:: /images/conf.PNG
+.. image:: /images/conf.png
   :alt: Add-in menu and configuration worksheet
 
 Currently the config management uses fixed cell references, so don't move anything. (**TODO: open for contribution. There's an example in xlwings for inspiration.**)
