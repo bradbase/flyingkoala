@@ -10,7 +10,7 @@ These are the User Defined Functions UDFs that come with FlyingKoala.
 horticulture
 ^^^^^^^^^^^^
 
-.. automodule:: flyingkoala.horticulture
+.. automodule:: flyingkoala
   :members:
   :private-members:
   :special-members:
