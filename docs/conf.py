@@ -13,6 +13,7 @@
 import os
 import sys
 import sphinx
+import psutil
 
 # if not 'READTHEDOCS' in os.environ:
 # sys.path.insert(0, os.path.abspath('..'))
