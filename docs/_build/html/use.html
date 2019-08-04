@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using FlyingKoala &mdash; FlyingKoala 0.0.0 documentation</title>
+  <title>Using FlyingKoala &mdash; FlyingKoala 0.0.3b documentation</title>
   
 
   
@@ -92,6 +92,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#clear-model-cache">Clear Model Cache</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-cached-model-names">Get Cached Model Names</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#get-workbook-names">Get workbook Names</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#import-functions">Import Functions</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#the-flyingkoala-configuration">2. The FlyingKoala Configuration</a><ul>
@@ -106,6 +107,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worked_example_horticulture.html">Worked Example - Horticulture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worked_example_timeseries.html">Worked Example - Time Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="worked_example_bom.html">Worked Example - BoM (Bureau of Meteorology)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 </ul>
 
             
@@ -176,43 +181,48 @@
 <div class="section" id="the-flyingkoala-add-in">
 <h2>1. The FlyingKoala Add-In<a class="headerlink" href="#the-flyingkoala-add-in" title="Permalink to this headline">¶</a></h2>
 <p>The FlyingKoala Add-In assists users to manage the cache which holds “models” (/equation systems). This is what it looks like.</p>
-<img alt="Add-in menu" src="_images/add-in.PNG" />
+<img alt="Add-in menu" src="_images/addin.png" />
 <div class="section" id="excel-file-name">
 <h3>Excel file name<a class="headerlink" href="#excel-file-name" title="Permalink to this headline">¶</a></h3>
 <p>This is the name of the workbook file. This setting is expected to auto-fill.</p>
 <p>In the future we expect to be able to load models from other Excel files which is why this configuration is here.</p>
-<a class="reference internal image-reference" href="_images/add-in_excel_file_name.PNG"><img alt="Add-in menu excel file name" src="_images/add-in_excel_file_name.PNG" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/addin_excel_file_name.png"><img alt="Add-in menu excel file name" src="_images/addin_excel_file_name.png" style="width: 400px;" /></a>
 </div>
 <div class="section" id="ignore-sheets">
 <h3>Ignore Sheets<a class="headerlink" href="#ignore-sheets" title="Permalink to this headline">¶</a></h3>
 <p>These are worksheets you would like to not load into the koala cache. Most likely used for worksheets which have your raw data, or worksheets which are not currently being used in the modelling you’re working on.</p>
-<a class="reference internal image-reference" href="_images/add-in_ignore_sheets.PNG"><img alt="Add-in menu ignore sheets" src="_images/add-in_ignore_sheets.PNG" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/addin_ignore_sheets.png"><img alt="Add-in menu ignore sheets" src="_images/addin_ignore_sheets.png" style="width: 400px;" /></a>
 </div>
 <div class="section" id="reload-koala">
 <h3>Reload Koala<a class="headerlink" href="#reload-koala" title="Permalink to this headline">¶</a></h3>
 <p>FlyingKoala caches parts of a specified spreadsheet (eg; the one named in “Excel config name”). To extract the part you are interested in, first Koala needs to have a look at the spreadsheet you are interested in. This button does that initial loading. If the spreadsheet has been loaded, this button will load it again. Great for when a formula in the spreadsheet has changed.</p>
-<a class="reference internal image-reference" href="_images/add-in_reload_koala.PNG"><img alt="Add-in button to load the specified spreadsheet." src="_images/add-in_reload_koala.PNG" style="width: 75px;" /></a>
+<a class="reference internal image-reference" href="_images/addin_reload_koala.png"><img alt="Add-in button to load the specified spreadsheet." src="_images/addin_reload_koala.png" style="width: 75px;" /></a>
 </div>
 <div class="section" id="clear-model-cache">
 <h3>Clear Model Cache<a class="headerlink" href="#clear-model-cache" title="Permalink to this headline">¶</a></h3>
 <p>This button clears the FlyingKoala cache of all the loaded models. Handy if you want to re-load some of the equations.</p>
-<a class="reference internal image-reference" href="_images/add-in_clear_model_cache.PNG"><img alt="Add-in button to load the specified spreadsheet." src="_images/add-in_clear_model_cache.PNG" style="width: 75px;" /></a>
+<a class="reference internal image-reference" href="_images/addin_clear_model_cache.png"><img alt="Add-in button to load the specified spreadsheet." src="_images/addin_clear_model_cache.png" style="width: 75px;" /></a>
 </div>
 <div class="section" id="get-cached-model-names">
 <h3>Get Cached Model Names<a class="headerlink" href="#get-cached-model-names" title="Permalink to this headline">¶</a></h3>
 <p>A message box will appear naming all the models which have been loaded into the FlyingKoala model cache.</p>
-<a class="reference internal image-reference" href="_images/add-in_get_cached_model_names.PNG"><img alt="Add-in button to display the names of the models which are currently in the FlyingKoala cache." src="_images/add-in_get_cached_model_names.PNG" style="width: 75px;" /></a>
+<a class="reference internal image-reference" href="_images/addin_get_cached_model_names.png"><img alt="Add-in button to display the names of the models which are currently in the FlyingKoala cache." src="_images/addin_get_cached_model_names.png" style="width: 75px;" /></a>
 </div>
 <div class="section" id="get-workbook-names">
 <h3>Get workbook Names<a class="headerlink" href="#get-workbook-names" title="Permalink to this headline">¶</a></h3>
 <p>A message box will appear naming all the named ranges xlwings has access to in the loaded workbook. This helps you check spelling on some of the named ranges. This list can also be seen, and managed, in the Formulas ==&gt; Name Manager menu of Excel.</p>
-<a class="reference internal image-reference" href="_images/add-in_get_workbook_names.PNG"><img alt="Add-in button to display the named ranges available to xlwings." src="_images/add-in_get_workbook_names.PNG" style="width: 75px;" /></a>
+<a class="reference internal image-reference" href="_images/addin_get_workbook_names.png"><img alt="Add-in button to display the named ranges available to xlwings." src="_images/addin_get_workbook_names.png" style="width: 75px;" /></a>
+</div>
+<div class="section" id="import-functions">
+<h3>Import Functions<a class="headerlink" href="#import-functions" title="Permalink to this headline">¶</a></h3>
+<p>This is an convenience button. It calls the xlwings UDF Import Functions method. It saves having to move between Add-Ins while developing UDFs.</p>
+<a class="reference internal image-reference" href="_images/addin_import_functions.png"><img alt="Add-in button to call the xlwings Import Fucntions methods." src="_images/addin_import_functions.png" style="width: 75px;" /></a>
 </div>
 </div>
 <div class="section" id="the-flyingkoala-configuration">
 <h2>2. The FlyingKoala Configuration<a class="headerlink" href="#the-flyingkoala-configuration" title="Permalink to this headline">¶</a></h2>
 <p>The FlyingKoala configuration worksheet assists users to manage the relationship between koala and xlwings. It must be named FlyingKoala.conf and this is what it looks like.</p>
-<img alt="Add-in menu and configuration worksheet" src="_images/conf.PNG" />
+<img alt="Add-in menu and configuration worksheet" src="_images/conf.png" />
 <p>Currently the config management uses fixed cell references, so don’t move anything. (<strong>TODO: open for contribution. There’s an example in xlwings for inspiration.</strong>)</p>
 <p>This is not kept in an external file as the FlyingKoala operations are generally workbook specific. You are likely to want to have this workbook behave in a particular way – especially when someone opens the file and re-calc while they are using it.</p>
 <div class="section" id="id1">

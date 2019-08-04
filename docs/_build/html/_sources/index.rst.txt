@@ -1,7 +1,4 @@
-.. FlyingKoala documentation master file, created by
-   sphinx-quickstart on Mon Jul 22 12:45:12 2019.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. FlyingKoala
 
 Welcome to FlyingKoala's documentation!
 =======================================
@@ -12,6 +9,10 @@ Welcome to FlyingKoala's documentation!
    installation
    use
    api
+   worked_example_horticulture
+   worked_example_timeseries
+   worked_example_bom
+   glossary
 
 
 Indices and tables

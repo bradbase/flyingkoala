@@ -34,7 +34,6 @@ These packages are required for using some of the FlyingKoala modules.
   * pytz
   * pvlib
 
-
 These packages are not required but highly recommended as they play very nicely with xlwings.
 
 * Matplotlib
@@ -47,13 +46,13 @@ The trouble with installing this one is the element of "it depends". The punchli
 
 Until we can arrange a script that figures it out for us we will need to do it by hand.
 
-Copy the addin\flyingkoala.xlam to;
+Copy the addin\\flyingkoala.xlam to;
 
 Here:
-C:\Users\username\AppData\Roaming\Microsoft\AddIns
+C:\\Users\\username\\AppData\\Roaming\\Microsoft\\AddIns
 
 Or here:
-C:\Users\username\AppData\Roaming\Microsoft\Excel\XLSTART
+C:\\Users\\username\\AppData\\Roaming\\Microsoft\\Excel\\XLSTART
 
 Sometimes there's an XLSTART in your home directory.
 
