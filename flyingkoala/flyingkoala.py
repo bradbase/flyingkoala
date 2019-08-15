@@ -14,9 +14,23 @@ excel_compiler = None
 ignore_sheets = []
 koala_models = {}
 
+def parse_model(model):
+    """Parses an Excel formula into tokens and returns the operand ranges.
+
+    :param model: A text representation of an Excel formula.
+    """
+
+    parser = ExcelParser()
+    tokens = parser.parse(model.formula)
+    print(parser.prettyprint())
+    return parser.getOperandRanges()
+
 @xw.sub
 def generate_model_graph(model, refresh = False):
-    """The function that extracts a graph of a given model from the Spreadsheet"""
+    """The function that extracts a graph of a given model from the Spreadsheet.
+
+    :param model: An xlwings Range object with an equation in it.
+    :param refresh: A flag to indicate whether an existing model needs to be re-loaded"""
     global koala_models
     global excel_compiler
 
@@ -27,10 +41,7 @@ def generate_model_graph(model, refresh = False):
         if refresh == False and model.name.name in koala_models.keys():
             return 'Model %s is already cached, set refresh True if you want it to refresh it' % model.name.name
 
-    parser = ExcelParser()
-    tokens = parser.parse(model.formula)
-    print(parser.prettyprint())
-    inputs = parser.getOperandRanges()
+    inputs = parse_model(model)
     # koala_models[str(model.name.name)] = excel_compiler.gen_graph(inputs= inputs, outputs= [model.name.name])
     koala_models[str(model.name.name)] = excel_compiler.gen_graph()
 
@@ -141,6 +152,7 @@ def evaluate_koala_model_row(model_name, input_data, model, no_calc_when_zero=[]
         if key in no_calc_when_zero and input_data[key] == 0:
             return
 
+        print("key", key, "data", input_data[key])
         model.set_value(key, input_data[key])
 
     return model.evaluate(model_name)

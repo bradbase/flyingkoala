@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flyingkoala",
-    version="0.0.3b",
+    version="0.0.4b",
     author="Bradley van Ree",
     author_email="flyingkoala@bradbase.net",
     description="Integration of xlwings and Koala2 with MS Excel plug-in",
@@ -39,7 +39,9 @@ setuptools.setup(
         'visualization',
         'scenario analysis',
         'modelling',
-        'model'],
+        'model',
+        'unit testing',
+        'testing'],
     url="https://github.com/bradbase/flyingkoala",
     packages=setuptools.find_packages(),
     classifiers=[

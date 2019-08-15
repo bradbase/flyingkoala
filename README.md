@@ -19,6 +19,7 @@ Wrapping a variety of things from Pandas is also a great effort in terms of time
 # The problem space
 
 * Auditing is difficult when everything is coded in code.
+* Unit testing of formulas is not possible
 * Existing models are astoundingly complex and extensively use Excel formulas - traditionally all of which would need to be re-written before the model could be useful in any other computer language (plus key-person risk).
 * Companies can't easily communicate the nuances of models (eg; mathematical, technical and financial) when they are expressed in code.
 * Managers and domain experts can’t necessarily be expected to code well enough to determine if a model (eg; mathematical, technical and financial) has been translated correctly.
@@ -33,6 +34,7 @@ Wrapping a variety of things from Pandas is also a great effort in terms of time
 
 # Features of FlyingKoala
 
+* Provides the ability to unit test Excel formulas using Excel as the calculation engine or Python.
 * Elegantly brings together, highlights, and makes available the positive attributes of xlwings, Koala2, Pandas and a number of other libraries without getting in the way.
 * Supplies pre-made User Defined Functions for mathematical equations, external application APIs, Python modules and database connectivity.
 * Manages caching of models (eg; mathematical, technical, financial, etc...) reducing loading time and takes advantage of a Koala2 feature where an equation can be in workbooks other than the active one.
@@ -40,6 +42,7 @@ Wrapping a variety of things from Pandas is also a great effort in terms of time
 
 # Benefits of FlyingKoala
 
+* Can unit test Excel formulas
 * Facilitates and encourages domain experts to define a language for their domain and then use the fresh language as the basis for defining models, equations and data related operations where that language can be both processed efficiently by computers and easily understood by other humans.
 * Audits are easier because more people know how to read and change Excel formulas than a computer coding language.
 * Provides Excel users access to calculation efficiencies which are usually completely unable to access without coding.
@@ -96,6 +99,7 @@ from flyingkoala.series import *
 ```
 
 # TODO:
+- [x] Unit testing Excel formulas
 - [ ] Change intro document - bring TL;DR into line with README.md
 - [x] Release a beta
 - [-] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments) **Can't be done**
@@ -114,3 +118,4 @@ from flyingkoala.series import *
 - [ ] Write a function that queries PostgreSQL and returns results as a dynamic array that fit a worksheet
 - [ ] Write more worked examples showcasing the various FlyingKoala defined functions (both RunPython and UDF)
 - [ ] Write a module for [scraping-ebay](https://github.com/cpatrickalves/scraping-ebay)
+- [ ] Write a module for an optimization problem using pyomo.

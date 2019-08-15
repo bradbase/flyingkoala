@@ -9,3 +9,4 @@ from .flyingkoala import get_model_cache_count
 from .flyingkoala import get_named_range_count
 from .flyingkoala import get_named_ranges
 from .flyingkoala import load_model
+from .flyingkoala import parse_model
