@@ -1,3 +1,11 @@
-flyingkoala.egg-info
+*.egg-info
 dist
 build
+flyingkoala/__pycache__
+flyingkoala/accounting/__pycache__
+flyingkoala/bom/__pycache__
+flyingkoala/database/__pycache__
+flyingkoala/energy/__pycache__
+flyingkoala/horticulture/__pycache__
+flyingkoala/timeseries/__pycache__
+flyingkoala/unit_testing_formulas/__pycache__

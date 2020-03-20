@@ -1,3 +1,14 @@
+"""
+FlyingKoala provides the ability to dynamically define Python calculations from Excel formulas enabling you to replace the Excel calculation engine with Python with a genuine minimum of Python code.
+
+The main benefit of replacing existing formulas with FyingKoala is that you get faster calculation, less need to get your hands dirty and can unit test your formulas. It speeds up scenario analysis and model development
+
+Two users;
+Those who want to easily add python functions to excel
+Those who want to speed up their existing crazy big models
+
+"""
+
 import setuptools
 
 with open("README.md", "r") as fh:
@@ -41,7 +52,8 @@ setuptools.setup(
         'modelling',
         'model',
         'unit testing',
-        'testing'],
+        'testing',
+        'audit'],
     url="https://github.com/bradbase/flyingkoala",
     packages=setuptools.find_packages(),
     classifiers=[
@@ -57,6 +69,7 @@ setuptools.setup(
             'numpy >= 1.15.0',
             'pandas >= 0.25.0',
             'openpyxl <= 2.5.3',
-            'python-harvest-redux == 5.0.0b0'
+            'python-harvest-2 >= 1.0.0',
+            'networkx == 2.1' # This is required else Koala 0.0.31 can't work
         ]
 )

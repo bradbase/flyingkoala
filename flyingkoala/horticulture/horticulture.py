@@ -4,6 +4,7 @@ import pandas as pd
 
 from flyingkoala import flyingkoala as fk
 
+
 @xw.func
 @xw.arg('model_name', doc='Name, as a string, of the model which will be evaluated. The Excel cell name / named range')
 @xw.arg('T_min', np.array, doc='Daily minimum temperature')
@@ -31,6 +32,7 @@ def DegreeDayByName(model_name, T_min, T_max):
     inputs_for_DegreeDay = pd.DataFrame({'T_min': np.array([T_min]), 'T_max': np.array([T_max])})
     return fk.evaluate_koala_model(model_name, inputs_for_DegreeDay)
 
+
 @xw.func
 @xw.arg('model_name', doc='Name, as a string, of the model which will be evaluated. The Excel cell name / named range')
 @xw.arg('T_min', np.array, doc='Daily minimum temperature')
@@ -43,7 +45,6 @@ def DegreeDayDynamicArrayByName(model_name, T_min, T_max):
     :param T_min: Daily minimum temperature
     :param T_max: Daily maximum temperature
     """
-
 
     if model_name not in fk.koala_models.keys():
         model = None
@@ -58,6 +59,7 @@ def DegreeDayDynamicArrayByName(model_name, T_min, T_max):
 
     inputs_for_DegreeDay = pd.DataFrame({'T_min': T_min, 'T_max': T_max})
     return fk.evaluate_koala_model(model_name, inputs_for_DegreeDay)
+
 
 @xw.func
 @xw.arg('model_name', xw.Range, doc='Name, as a string or named range, of the model which will be evaluated.')

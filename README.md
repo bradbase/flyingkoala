@@ -85,7 +85,7 @@ There is a library of horticulture related UDFs which assist in calculating Grow
 
 ```Python
 import xlwings as xw
-from flyingkoala import flyingkoala
+from flyingkoala import *
 from flyingkoala.horticulture import *
 ```
 
@@ -93,7 +93,7 @@ If we were in need of using the pre-defined UDFs which wrap the Pandas resample 
 
 ```Python
 import xlwings as xw
-from flyingkoala import flyingkoala
+from flyingkoala import *
 from flyingkoala.horticulture import *
 from flyingkoala.series import *
 ```
@@ -119,3 +119,4 @@ from flyingkoala.series import *
 - [ ] Write more worked examples showcasing the various FlyingKoala defined functions (both RunPython and UDF)
 - [ ] Write a module for [scraping-ebay](https://github.com/cpatrickalves/scraping-ebay)
 - [ ] Write a module for an optimization problem using pyomo.
+- [] Set up a travis continuous integration service
