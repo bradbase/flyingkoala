@@ -16,7 +16,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flyingkoala",
-    version="0.0.4b1",
+    version="0.0.4b2",
     author="Bradley van Ree",
     author_email="flyingkoala@bradbase.net",
     description="Integration of xlwings and Koala2 with MS Excel plug-in",
@@ -69,7 +69,7 @@ setuptools.setup(
             'numpy >= 1.15.0',
             'pandas >= 0.25.0',
             'openpyxl <= 2.5.3',
-            'python-harvest-apiv2 >= 1.0.0',
+            'python-harvest-apiv2 >= 1.0.1',
             'networkx == 2.1' # This is required else Koala 0.0.31 can't work
         ]
 )
