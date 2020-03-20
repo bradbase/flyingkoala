@@ -21,7 +21,7 @@ For calculating Growing Degree-Days you would have a module that would look like
 .. code-block:: Python
 
   import xlwings as xw
-  from flyingkoala import flyingkoala
+  from flyingkoala import *
   from flyingkoala.horticulture import *
 
 For doing some time series transformation you would have a module that would look like this:
@@ -29,7 +29,7 @@ For doing some time series transformation you would have a module that would loo
 .. code-block:: Python
 
   import xlwings as xw
-  from flyingkoala import flyingkoala
+  from flyingkoala import *
   from flyingkoala.series import *
 
 For doing some time series transformation while calculating Growing Degrees-Day you would have a module that would look like this:
@@ -37,7 +37,7 @@ For doing some time series transformation while calculating Growing Degrees-Day 
 .. code-block:: Python
 
   import xlwings as xw
-  from flyingkoala import flyingkoala
+  from flyingkoala import *
   from flyingkoala.horticulture import *
   from flyingkoala.series import *
 
@@ -50,6 +50,6 @@ At this point all FlyingKoala can offer is an easy interface to Koala2.
 .. code-block:: Python
 
   import xlwings as xw
-  from flyingkoala import flyingkoala
+  from flyingkoala import *
 
   this

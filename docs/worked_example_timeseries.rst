@@ -29,5 +29,5 @@ For doing some time series transformation you would have a module that would loo
   .. code-block:: Python
 
     import xlwings as xw
-    from flyingkoala import flyingkoala
+    from flyingkoala import *
     from flyingkoala.timeseries import *

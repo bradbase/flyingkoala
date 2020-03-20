@@ -39,7 +39,7 @@ The actual Python code behind that UDF;
   import numpy as np
   import pandas as pd
 
-  from flyingkoala import flyingkoala as fk
+  from flyingkoala import * as fk
 
   def DegreeDay(model, T_min, T_max):
       """Function for calculating Degree Day"""

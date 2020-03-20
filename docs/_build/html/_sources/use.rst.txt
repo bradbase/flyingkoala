@@ -122,7 +122,7 @@ For calculating Growing Degree-Days you would have a module that would look like
 .. code-block:: Python
 
   import xlwings as xw
-  from flyingkoala import flyingkoala
+  from flyingkoala import *
   from flyingkoala.horticulture import *
 
 For doing some time series transformation you would have a module that would look like this:
@@ -130,7 +130,7 @@ For doing some time series transformation you would have a module that would loo
 .. code-block:: Python
 
   import xlwings as xw
-  from flyingkoala import flyingkoala
+  from flyingkoala import *
   from flyingkoala.timeseries import *
 
 For doing some time series transformation while calculating Growing Degrees-Day you would have a module that would look like this:
@@ -138,7 +138,7 @@ For doing some time series transformation while calculating Growing Degrees-Day 
 .. code-block:: Python
 
   import xlwings as xw
-  from flyingkoala import flyingkoala
+  from flyingkoala import *
   from flyingkoala.horticulture import *
   from flyingkoala.timeseries import *
 
@@ -205,7 +205,7 @@ With that understanding, we can now write a Python function which takes a key fo
   import numpy as np
   import pandas as pd
 
-  from flyingkoala import flyingkoala as fk
+  from flyingkoala import * as fk
 
   def DegreeDay(model, T_min, T_max):
       """Function for calculating Degree Day"""
