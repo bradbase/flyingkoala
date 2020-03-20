@@ -28,7 +28,7 @@ copyright = '2019, Bradley van Ree'
 author = 'Bradley van Ree'
 
 # The full version, including alpha/beta/rc tags
-release = '0.0.4b1'
+release = '0.0.4b2'
 
 
 # -- General configuration ---------------------------------------------------
