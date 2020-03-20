@@ -69,7 +69,7 @@ setuptools.setup(
             'numpy >= 1.15.0',
             'pandas >= 0.25.0',
             'openpyxl <= 2.5.3',
-            'python-harvest-2 >= 1.0.0',
+            'python-harvest-apiv2 >= 1.0.0',
             'networkx == 2.1' # This is required else Koala 0.0.31 can't work
         ]
 )
