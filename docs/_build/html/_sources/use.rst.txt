@@ -205,7 +205,7 @@ With that understanding, we can now write a Python function which takes a key fo
   import numpy as np
   import pandas as pd
 
-  from flyingkoala import * as fk
+  from flyingkoala import flyingkoala as fk
 
   def DegreeDay(model, T_min, T_max):
       """Function for calculating Degree Day"""

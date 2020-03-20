@@ -15,24 +15,24 @@
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
 \lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
+    backgroundcolor=\color{backcolour},
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbers=left,                    
-    numbersep=5pt,                  
-    showspaces=false,                
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
     showstringspaces=false,
-    showtabs=false,                  
+    showtabs=false,
     tabsize=2
 }
- 
+
 \lstset{style=mystyle}
 
 
@@ -44,36 +44,36 @@
 \begin{titlepage}
    \begin{center}
        \vspace*{1cm}
- 
+
        \textbf{FlyingKoala}
- 
+
        \vspace{2cm}
- 
+
        \textbf{Bradley van Ree}
- 
+
        \vspace{2cm}
- 
+
        Defining mathematical and technical models in MS Excel with Excel formulae but evaluating them using Python
- 
-\vfill 
- 
+
+\vfill
+
 		\begin{figure*}[h!]
 			\centering
 			\includegraphics[scale=0.4]{images/degreedaydynamicarray_equation_1.PNG}
 		\end{figure*}
- 
-\vfill 
- 
+
+\vfill
+
        For use with mathematical modelling where you want the advantages of Python calculation and/or libraries but your user base are non-technical
-       
+
        \vfill
- 
+
    \end{center}
 \end{titlepage}
 
 \tableofcontents
 
-\newpage 
+\newpage
 
 \section{TL;DR}
 \paragraph{} Srsly, I need my life back. Get to the point.
@@ -102,7 +102,7 @@
 
 \subsection{Benefits}
 \begin{itemize}
-	\item The entire mathematical (/technical) model is available for managers to read because it's an Excel equation. 
+	\item The entire mathematical (/technical) model is available for managers to read because it's an Excel equation.
 	\item Audits are easier because people know how to read and change Excel
 	\item inter-company expressions of a calculation don't necessarily require all sides to have evenly skilled coders
 	\item Makes time series data calculations with serious size data sets possible in Excel
@@ -116,7 +116,7 @@
 
 \paragraph{} While doing data analysis work, particularly time series analysis (but not necessarily limited to), you very quickly find that the limits of Excel are much closer than you'd like.
 
-\paragraph{} The data analysis world has looked around for solutions and adapted the statistics powerhouse language R to Python forming the basis for the Pandas library. Due to the power of the Python community, matplotlib is often associated for the inevitable visualisations. And they are marvellous tools but are not necessarily intuitive. 
+\paragraph{} The data analysis world has looked around for solutions and adapted the statistics powerhouse language R to Python forming the basis for the Pandas library. Due to the power of the Python community, matplotlib is often associated for the inevitable visualisations. And they are marvellous tools but are not necessarily intuitive.
 
 \paragraph{} There comes a challenge, however, when you have a number of experts who aren't necessarily code savvy but are still required to do some number crunching. These people could be engineers, finance (accountants, book keepers), sales people, specialists in quite unrelated fields like biology, botany, research or even students in essentially any field. Often enough these people are adept at Excel but are, understandably, not going to become proficient in writing computer code.
 
@@ -357,7 +357,7 @@ $=$DegreeDayDynamicArray(Equation\_2,\$B2:\$B366,\$C2:\$C366) \index{DegreeDayDy
 
 \begin{lstlisting}[language=Python]
 import xlwings as xw
-from flyingkoala import flyingkoala
+from flyingkoala import *
 from flyingkoala.horticulture import *
 \end{lstlisting}
 
@@ -412,7 +412,7 @@ def DegreeDayDynamicArray(model, T_min, T_max):
 
 \paragraph{} Obviously they can get more sophisticated. Calling out to databases, APIs, casting types, doing all sorts of other manipulations. It is Python so you've got everything here you'd want.
 
-\newpage 
+\newpage
 \printindex
 
 \end{document}
