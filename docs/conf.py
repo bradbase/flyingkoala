@@ -26,7 +26,7 @@ master_doc = 'index'
 project = 'FlyingKoala'
 copyright = '2019, Bradley van Ree'
 author = 'Bradley van Ree'
-
+version = '0.0.5b0'
 # The full version, including alpha/beta/rc tags
 release = '0.0.5b0'
 
