@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Using FlyingKoala &mdash; FlyingKoala 0.0.3b documentation</title>
+  <title>Using FlyingKoala &mdash; FlyingKoala 0.0.5b0 documentation</title>
   
 
   
@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -247,20 +247,20 @@
 <p>Providing the User Defined Functions (UDFs) you are expecting to use already exist in the FlyingKoala library you can simply import them. They won’t be loaded at this point, but will become available for use in Excel like any other formula. An equation will become loaded into Koala cache as a model when you use it.</p>
 <p>Make sure you have the dependencies installed for the FlyingKoala module you want to use. Notes on this can be found in <a class="reference internal" href="installation.html#installation"><span class="std std-ref">Install the library</span></a>.</p>
 <p>For calculating Growing Degree-Days you would have a module that would look like this:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
-<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="k">as</span> <span class="nn">xw</span>
+<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">flyingkoala.horticulture</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>For doing some time series transformation you would have a module that would look like this:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
-<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="k">as</span> <span class="nn">xw</span>
+<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">flyingkoala.timeseries</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <p>For doing some time series transformation while calculating Growing Degrees-Day you would have a module that would look like this:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="kn">as</span> <span class="nn">xw</span>
-<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xlwings</span> <span class="k">as</span> <span class="nn">xw</span>
+<span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">flyingkoala.horticulture</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">flyingkoala.timeseries</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
@@ -303,8 +303,8 @@
 <p>We can see in the above that even though the relationship between the terms is quite different, calculating a Growing Degree Day appears to require the same number of inputs, namely T_min, T_max and T_base. The rest of the relationship is in operators and hard constants. This is an observation which often holds up while developing equations… You only have, or need, particular inputs to find the answer to something and if there is another pathway to the answer it is likely to still only need the same inputs (often enough they are the only inputs you <em>can get</em>).</p>
 <p>The truly variable terms in the Growing Degree Day equations are T_min and T_max. To obviate some Wikipedia reading, T_base is usually set to a value of 10. This makes T_base a soft constant. One you <em>might</em> change but are likely not to. We want to support an ability to change it. Remember, we are trying to invent new mathematics so if there’s a knob - we need to be able to turn it.</p>
 <p>With that understanding, we can now write a Python function which takes a key for the cache (a named range name) and two parameters being T_min and T_max:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">from</span> <span class="nn">flyingkoala</span> <span class="kn">import</span> <span class="n">flyingkoala</span> <span class="k">as</span> <span class="n">fk</span>
 
@@ -317,11 +317,11 @@
 </div>
 <p>This function is not finished. It still needs xlwings mark-up to become a User Defined Function. But we can see here that there is nothing genuinely complex about taking three arguments, packaging two into a Pandas Dataframe and then calling EvaluateKoalaModel.</p>
 <p>If we put all the xlwings markup on the above Python function, we can import it as a User Defined Function:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@xw.func</span>
-<span class="nd">@xw.arg</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Name, as a string, of the model which will be evaluated. The Excel cell name / named range&#39;</span><span class="p">)</span>
-<span class="nd">@xw.arg</span><span class="p">(</span><span class="s1">&#39;T_min&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Daily minimum temperature&#39;</span><span class="p">)</span>
-<span class="nd">@xw.arg</span><span class="p">(</span><span class="s1">&#39;T_max&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Daily maximum temperature&#39;</span><span class="p">)</span>
-<span class="nd">@xw.ret</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@xw</span><span class="o">.</span><span class="n">func</span>
+<span class="nd">@xw</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">xw</span><span class="o">.</span><span class="n">Range</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Name, as a string, of the model which will be evaluated. The Excel cell name / named range&#39;</span><span class="p">)</span>
+<span class="nd">@xw</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="s1">&#39;T_min&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Daily minimum temperature&#39;</span><span class="p">)</span>
+<span class="nd">@xw</span><span class="o">.</span><span class="n">arg</span><span class="p">(</span><span class="s1">&#39;T_max&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">,</span> <span class="n">doc</span><span class="o">=</span><span class="s1">&#39;Daily maximum temperature&#39;</span><span class="p">)</span>
+<span class="nd">@xw</span><span class="o">.</span><span class="n">ret</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">DegreeDay</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">T_min</span><span class="p">,</span> <span class="n">T_max</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Function to assemble a dataframe for calculating Degree Day&quot;&quot;&quot;</span>
 

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>API &mdash; FlyingKoala 0.0.3b documentation</title>
+  <title>API &mdash; FlyingKoala 0.0.5b0 documentation</title>
   
 
   
@@ -21,11 +21,11 @@
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -86,13 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html#install-the-add-in">Install the add-in</a></li>
 <li class="toctree-l1"><a class="reference internal" href="use.html">Using FlyingKoala</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#user-defined-functions">User Defined Functions</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-flyingkoala.bom.bom">bom</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-flyingkoala.energy.energy">energy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-flyingkoala.horticulture.horticulture">horticulture</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-flyingkoala.timeseries.timeseries">timeseries</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#user-defined-functions">User Defined Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#vba-macros">VBA Macros</a></li>
 </ul>
 </li>
@@ -169,120 +163,6 @@
 <div class="section" id="user-defined-functions">
 <h2>User Defined Functions<a class="headerlink" href="#user-defined-functions" title="Permalink to this headline">¶</a></h2>
 <p>These are the User Defined Functions UDFs that come with FlyingKoala.</p>
-<div class="section" id="module-flyingkoala.bom.bom">
-<span id="bom"></span><h3>bom<a class="headerlink" href="#module-flyingkoala.bom.bom" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
-<dt id="flyingkoala.bom.bom.load_observations_axf">
-<code class="sig-prename descclassname">flyingkoala.bom.bom.</code><code class="sig-name descname">load_observations_axf</code><span class="sig-paren">(</span><em class="sig-param">file_name</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/bom/bom.html#load_observations_axf"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.bom.bom.load_observations_axf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to extract the data table from a Bureau of Meteorology observations .axf</p>
-</dd></dl>
-
-</div>
-<div class="section" id="module-flyingkoala.energy.energy">
-<span id="energy"></span><h3>energy<a class="headerlink" href="#module-flyingkoala.energy.energy" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
-<dt id="flyingkoala.energy.energy.SOLARNOON">
-<code class="sig-prename descclassname">flyingkoala.energy.energy.</code><code class="sig-name descname">SOLARNOON</code><span class="sig-paren">(</span><em class="sig-param">latitude</em>, <em class="sig-param">longitude</em>, <em class="sig-param">times</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/energy/energy.html#SOLARNOON"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.energy.energy.SOLARNOON" title="Permalink to this definition">¶</a></dt>
-<dd><p>Finds solar noon for each day in teh series</p>
-</dd></dl>
-
-</div>
-<div class="section" id="module-flyingkoala.horticulture.horticulture">
-<span id="horticulture"></span><h3>horticulture<a class="headerlink" href="#module-flyingkoala.horticulture.horticulture" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
-<dt id="flyingkoala.horticulture.horticulture.DegreeDay">
-<code class="sig-prename descclassname">flyingkoala.horticulture.horticulture.</code><code class="sig-name descname">DegreeDay</code><span class="sig-paren">(</span><em class="sig-param">model_name</em>, <em class="sig-param">T_min</em>, <em class="sig-param">T_max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/horticulture/horticulture.html#DegreeDay"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.horticulture.horticulture.DegreeDay" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to assemble a dataframe for calculating Degree Day. Takes either a name of a model or the named range itself.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> – Named Range of the model which will be evaluated. The Excel cell name / named range</p></li>
-<li><p><strong>T_min</strong> – Daily minimum temperature</p></li>
-<li><p><strong>T_max</strong> – Daily maximum temperature</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="flyingkoala.horticulture.horticulture.DegreeDayByName">
-<code class="sig-prename descclassname">flyingkoala.horticulture.horticulture.</code><code class="sig-name descname">DegreeDayByName</code><span class="sig-paren">(</span><em class="sig-param">model_name</em>, <em class="sig-param">T_min</em>, <em class="sig-param">T_max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/horticulture/horticulture.html#DegreeDayByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.horticulture.horticulture.DegreeDayByName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to assemble a dataframe for calculating Degree Day.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> – Text name (string) of the model which will be evaluated. The Excel cell name / named range</p></li>
-<li><p><strong>T_min</strong> – Daily minimum temperature</p></li>
-<li><p><strong>T_max</strong> – Daily maximum temperature</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="flyingkoala.horticulture.horticulture.DegreeDayDynamicArray">
-<code class="sig-prename descclassname">flyingkoala.horticulture.horticulture.</code><code class="sig-name descname">DegreeDayDynamicArray</code><span class="sig-paren">(</span><em class="sig-param">model_name</em>, <em class="sig-param">T_min</em>, <em class="sig-param">T_max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/horticulture/horticulture.html#DegreeDayDynamicArray"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.horticulture.horticulture.DegreeDayDynamicArray" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to assemble a dataframe for calculating Degree Day using dynamic arrays. Takes either a name of a model or the named range itself.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> – Named Range of the model which will be evaluated. The Excel cell name / named range</p></li>
-<li><p><strong>T_min</strong> – Daily minimum temperature</p></li>
-<li><p><strong>T_max</strong> – Daily maximum temperature</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="function">
-<dt id="flyingkoala.horticulture.horticulture.DegreeDayDynamicArrayByName">
-<code class="sig-prename descclassname">flyingkoala.horticulture.horticulture.</code><code class="sig-name descname">DegreeDayDynamicArrayByName</code><span class="sig-paren">(</span><em class="sig-param">model_name</em>, <em class="sig-param">T_min</em>, <em class="sig-param">T_max</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/horticulture/horticulture.html#DegreeDayDynamicArrayByName"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.horticulture.horticulture.DegreeDayDynamicArrayByName" title="Permalink to this definition">¶</a></dt>
-<dd><p>Function to assemble a dataframe for calculating Degree Day using dynamic arrays.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>model</strong> – Text name (string) of the model which will be evaluated. The Excel cell name / named range</p></li>
-<li><p><strong>T_min</strong> – Daily minimum temperature</p></li>
-<li><p><strong>T_max</strong> – Daily maximum temperature</p></li>
-</ul>
-</dd>
-</dl>
-</dd></dl>
-
-</div>
-<div class="section" id="module-flyingkoala.timeseries.timeseries">
-<span id="timeseries"></span><h3>timeseries<a class="headerlink" href="#module-flyingkoala.timeseries.timeseries" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
-<dt id="flyingkoala.timeseries.timeseries.KEEPRECORDS">
-<code class="sig-prename descclassname">flyingkoala.timeseries.timeseries.</code><code class="sig-name descname">KEEPRECORDS</code><span class="sig-paren">(</span><em class="sig-param">times</em>, <em class="sig-param">inputs</em>, <em class="sig-param">window=5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/timeseries/timeseries.html#KEEPRECORDS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.timeseries.timeseries.KEEPRECORDS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Keeps records at an offset determined by window</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="flyingkoala.timeseries.timeseries.RESAMPLEMINS">
-<code class="sig-prename descclassname">flyingkoala.timeseries.timeseries.</code><code class="sig-name descname">RESAMPLEMINS</code><span class="sig-paren">(</span><em class="sig-param">times</em>, <em class="sig-param">inputs</em>, <em class="sig-param">window=5</em>, <em class="sig-param">operation='mean'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/timeseries/timeseries.html#RESAMPLEMINS"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.timeseries.timeseries.RESAMPLEMINS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Performs a look-ahead re-sample of size window with stated operation on a time series for values in inputs and does not return the time index</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="flyingkoala.timeseries.timeseries.RESAMPLEMINSWITHINDEX">
-<code class="sig-prename descclassname">flyingkoala.timeseries.timeseries.</code><code class="sig-name descname">RESAMPLEMINSWITHINDEX</code><span class="sig-paren">(</span><em class="sig-param">times</em>, <em class="sig-param">inputs</em>, <em class="sig-param">window=5</em>, <em class="sig-param">operation='mean'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/timeseries/timeseries.html#RESAMPLEMINSWITHINDEX"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.timeseries.timeseries.RESAMPLEMINSWITHINDEX" title="Permalink to this definition">¶</a></dt>
-<dd><p>Performs a look-ahead re-sample average of size window on a time series for values in inputs and returns with the time index</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="flyingkoala.timeseries.timeseries.TIMEISBETWEEN">
-<code class="sig-prename descclassname">flyingkoala.timeseries.timeseries.</code><code class="sig-name descname">TIMEISBETWEEN</code><span class="sig-paren">(</span><em class="sig-param">keys</em>, <em class="sig-param">below</em>, <em class="sig-param">above</em>, <em class="sig-param">periods</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/timeseries/timeseries.html#TIMEISBETWEEN"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.timeseries.timeseries.TIMEISBETWEEN" title="Permalink to this definition">¶</a></dt>
-<dd><p>Decides if a time is between certain range of a given time</p>
-</dd></dl>
-
-<dl class="function">
-<dt id="flyingkoala.timeseries.timeseries.TIMESERIESWINDOWAVERAGE">
-<code class="sig-prename descclassname">flyingkoala.timeseries.timeseries.</code><code class="sig-name descname">TIMESERIESWINDOWAVERAGE</code><span class="sig-paren">(</span><em class="sig-param">times</em>, <em class="sig-param">inputs</em>, <em class="sig-param">window=5</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/flyingkoala/timeseries/timeseries.html#TIMESERIESWINDOWAVERAGE"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#flyingkoala.timeseries.timeseries.TIMESERIESWINDOWAVERAGE" title="Permalink to this definition">¶</a></dt>
-<dd><p>Performs a look-ahead moving average of size window on a time series for values in inputs</p>
-</dd></dl>
-
-</div>
 </div>
 <div class="section" id="vba-macros">
 <h2>VBA Macros<a class="headerlink" href="#vba-macros" title="Permalink to this headline">¶</a></h2>
