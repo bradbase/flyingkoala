@@ -16,7 +16,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flyingkoala",
-    version="0.0.4b2",
+    version="0.0.5b0",
     author="Bradley van Ree",
     author_email="flyingkoala@bradbase.net",
     description="Integration of xlwings and Koala2 with MS Excel plug-in",
@@ -65,7 +65,6 @@ setuptools.setup(
     install_requires=[
             'xlwings >= 0.15.8',
             'koala2 <=  0.0.31',
-            'sphinx_rtd_theme',
             'numpy >= 1.15.0',
             'pandas >= 0.25.0',
             'openpyxl <= 2.5.3',

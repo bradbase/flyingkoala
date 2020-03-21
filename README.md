@@ -98,14 +98,12 @@ from flyingkoala.horticulture import *
 from flyingkoala.series import *
 ```
 
+# Anaconda
+Due to dependency on Koala2 0.0.31 making an Anaconda package is less easy than I'd like. Once [koala_xlcalcualtor](https://github.com/bradbase/koala_xlcalculator) matures it will be far easier to make an Anaconda package. So efforts are being put into bringing koala_xlcalcualtor up to feature compatibility with Koala2 0.0.31 rather than supporting an old version of Koala2 in Anaconda.
+
 # TODO:
-- [x] Unit testing Excel formulas
 - [ ] Change intro document - bring TL;DR into line with README.md
-- [x] Release a beta
-- [-] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments) **Can't be done**
-- [X] Write an Excel plug-in which uses the xlwings REST interface to manage the model cache, and provides the supplied FlyingKoala VBA macros
-- [X] Write doco on how to install the add-in by hand
-- [ ] Write a script to install the add-in
+- [ ] -Write a script to install the add-in-
 - [ ] Improve add-in. Requires better handling of essentially everything.
 - [ ] Support add-in feature to unload a specific model
 - [ ] Write a wizard, to launch from the Excel plug-in, which writes and updates the xlwings Python "code"(/imports) for FlyingKoala defined UDFs
@@ -119,4 +117,6 @@ from flyingkoala.series import *
 - [ ] Write more worked examples showcasing the various FlyingKoala defined functions (both RunPython and UDF)
 - [ ] Write a module for [scraping-ebay](https://github.com/cpatrickalves/scraping-ebay)
 - [ ] Write a module for an optimization problem using pyomo.
-- [] Set up a travis continuous integration service
+- [ ] Set up a travis continuous integration service
+- [ ] Improve the readthedocs to support versions of documentation properly
+- [-] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments) **Can't be done**
