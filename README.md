@@ -1,12 +1,12 @@
 
 # FlyingKoala
 
-FlyingKoala facilitates defining models (mathematical, technical and financial), scenario analysis and some system integration tasks in MS Excel while reducing the amount of computer code required to do these tasks and increasing the speed of calculation. The outcome is that people with good Excel skills can do more for themselves before requiring a code savvy offsider. FlyingKoala also facilitates communication of financial, technical and mathematical modelling as the expressions may be largely expressed in Excel formulas.
+FlyingKoala facilitates defining quantitative and qualitative models, scenario analysis and some system integration tasks in MS Excel while reducing the amount of computer code required to do these tasks while increasing the speed of calculation. The outcome is that people with good Excel skills can do more for themselves before requiring a code savvy offsider. FlyingKoala also facilitates communication of financial, technical and mathematical modelling as the expressions may be largely expressed in Excel formulas.
 
 From a technical standpoint FlyingKoala is a collection of helper functions for [xlwings](https://www.xlwings.org/). These helper functions reach out to:
-* [Koala2](https://github.com/vallettea/koala/blob/master/doc/presentation.md)
+* [koala_xlcalcualtor](https://github.com/bradbase/koala_xlcalculator)
 * [Pandas](https://pandas.pydata.org/)
-* [Harvest](https://pypi.org/project/python-harvest-redux/5.0.0b0/)
+* [Harvest](https://github.com/bradbase/python-harvest_apiv2)
 * [PVLib](https://pvlib-python.readthedocs.io/en/stable/)
 
 To a large extent the advantages for data analysis with FlyingKoala actually comes from clever use of Excel's existing functionality and the greatness of xlwings. FlyingKoala provides a number of pre-written Python UDFs which are especially useful in going beyond the usual limits of Excel.
@@ -103,7 +103,6 @@ Due to dependency on Koala2 0.0.31 making an Anaconda package is less easy than 
 
 # TODO:
 - [ ] Change intro document - bring TL;DR into line with README.md
-- [ ] -Write a script to install the add-in-
 - [ ] Improve add-in. Requires better handling of essentially everything.
 - [ ] Support add-in feature to unload a specific model
 - [ ] Write a wizard, to launch from the Excel plug-in, which writes and updates the xlwings Python "code"(/imports) for FlyingKoala defined UDFs
@@ -119,4 +118,4 @@ Due to dependency on Koala2 0.0.31 making an Anaconda package is less easy than 
 - [ ] Write a module for an optimization problem using pyomo.
 - [ ] Set up a travis continuous integration service
 - [ ] Improve the readthedocs to support versions of documentation properly
-- [-] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments) **Can't be done**
+- [X] Write a UDF which is a generic use case for Koala (eg; takes a variable number of term arguments) **Can't be done**

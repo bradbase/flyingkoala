@@ -2,9 +2,9 @@
 import logging
 
 import xlwings as xw
-from koala.ExcelCompiler import ExcelCompiler
-from koala.tokenizer import ExcelParser
-from koala.Spreadsheet import Spreadsheet
+from koala_xlcalculator import ModelCompiler
+from koala_xlcalculator import Model
+from koala_xlcalculator import Evaluator
 import numpy as np
 import pandas as pd
 
@@ -19,15 +19,15 @@ else:
     logging.error("Would be great to see a worksheet FlyingKoala.conf")
 
 excel_file_name = workbook.fullname
-excel_compiler = None
-ignore_sheets = []
+excel_model = None # koala_xlcalculator model
+ignore_sheets = "FlyingKoala.conf\\_FlyingKoala.conf\\xlwings.conf\\_xlwings.conf"
 koala_models = {}
 
 @xw.sub
 def generate_model_graph(model, refresh = False):
     """The function that extracts a graph of a given model from the Spreadsheet"""
     global koala_models
-    global excel_compiler
+    global excel_model
 
     if isinstance(model, str):
         if refresh == False and model in koala_models.keys():
@@ -36,11 +36,10 @@ def generate_model_graph(model, refresh = False):
         if refresh == False and model.name.name in koala_models.keys():
             return 'Model %s is already cached, set refresh True if you want it to refresh it' % model.name.name
 
-    parser = ExcelParser()
-    tokens = parser.parse(model.formula)
-    logging.debug(parser.prettyprint())
-    inputs = parser.getOperandRanges()
-    koala_models[str(model.name.name)] = excel_compiler.gen_graph(inputs= inputs, outputs= [model.name.name])
+    # logging.debug(parser.prettyprint())
+    inputs = [model.name.name]
+    inputs.extend(excel_model.formulae[model.name.name].terms)
+    koala_models[str(model.name.name)] = ModelCompiler.extract(excel_model, focus=inputs)
 
     logging.info("Successfully loaded model {}".format(model.name))
     return 'Cached Model %s' % model.name
@@ -48,8 +47,10 @@ def generate_model_graph(model, refresh = False):
 
 @xw.sub
 def reload_koala(file_name, ignore_sheets= None, bootstrap_equations= None):
-    """Loads the Excel workbook into a koala Spreadsheet object"""
-    global excel_compiler
+    """Loads the Excel workbook into a Python compatible object"""
+    global excel_model
+
+    ignore_sheets = ignore_sheets.split('\\')
 
     logging.info("Loading workbook")
 
@@ -57,20 +58,24 @@ def reload_koala(file_name, ignore_sheets= None, bootstrap_equations= None):
         logging.debug("file_name is not set in Excel Ribbon using {}".format(excel_file_name))
         file_name = excel_file_name
 
-    excel_compiler = ExcelCompiler(file_name, ignore_sheets = ignore_sheets)
-    excel_compiler.clean_pointer()
+    excel_compiler = ModelCompiler()
+    excel_model = excel_compiler.read_and_parse_archive(file_name, ignore_sheets=ignore_sheets)
 
     logging.info("Workbook '{}' has been loaded.".format(file_name))
     logging.info("Ignored worksheets {}".format(ignore_sheets))
 
 
 if auto_load_value == True:
+    ignore_sheets = "{}\\{}".format(workbook.sheets['FlyingKoala.conf'].range('B2').value, ignore_sheets)
     reload_koala(excel_file_name, ignore_sheets=ignore_sheets)
+
 
 @xw.func
 def reset_koala_model_cache():
     global koala_models
+
     koala_models = {}
+
 
 @xw.func
 def get_model_cache_count():
@@ -78,12 +83,13 @@ def get_model_cache_count():
 
     return len(koala_models.keys())
 
+
 @xw.func
 def get_named_range_count():
 
     wb = xw.books.active
-
     return len(wb.names)
+
 
 @xw.func
 def get_cached_koala_model_names():
@@ -95,16 +101,17 @@ def get_cached_koala_model_names():
 
     return names_of_cached_models
 
+
 @xw.func
 def get_named_ranges():
 
     returnable = ""
     wb = xw.books.active
-
     for name in wb.names:
         returnable += "\r\n%s" % (name.name)
 
     return returnable
+
 
 @xw.func
 @xw.arg('model_name', doc='Name, as a string, of the model which might be cached.')
@@ -117,9 +124,9 @@ def is_koala_model_cached(model_name):
 def load_model(model_name):
     """Preparing model name from either a string or an xlwings Range and load it into cache."""
     global koala_models
-    global excel_compiler
+    global excel_model
 
-    if excel_compiler is None:
+    if excel_model is None:
         reload_koala(excel_file_name, ignore_sheets=ignore_sheets)
 
     # figure out if we have a named range or a text name of the model
@@ -151,6 +158,7 @@ def load_model(model_name):
 @xw.arg('model_name', doc='Name, as a string, of the model which might be cached.')
 def unload_koala_model_from_cache(model_name):
     global koala_models
+
     del(koala_models[model_name])
 
 
@@ -162,9 +170,11 @@ def evaluate_koala_model_row(model_name, input_data, model, no_calc_when_zero=[]
         if key in no_calc_when_zero and input_data[key] == 0:
             return
 
-        model.set_value(key, input_data[key])
+        model.set_cell_value(key, input_data[key])
 
-    return model.evaluate(model_name)
+    evaluator = Evaluator(model)
+
+    return evaluator.evaluate(model_name)
 
 
 @xw.sub
