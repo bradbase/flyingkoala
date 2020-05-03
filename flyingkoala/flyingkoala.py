@@ -2,9 +2,9 @@
 import logging
 
 import xlwings as xw
-from koala_xlcalculator import ModelCompiler
-from koala_xlcalculator import Model
-from koala_xlcalculator import Evaluator
+from xlcalculator import ModelCompiler
+from xlcalculator import Model
+from xlcalculator import Evaluator
 import numpy as np
 import pandas as pd
 
@@ -19,7 +19,7 @@ else:
     logging.error("Would be great to see a worksheet FlyingKoala.conf")
 
 excel_file_name = workbook.fullname
-excel_model = None # koala_xlcalculator model
+excel_model = None # xlcalculator model
 ignore_sheets = "FlyingKoala.conf\\_FlyingKoala.conf\\xlwings.conf\\_xlwings.conf"
 koala_models = {}
 

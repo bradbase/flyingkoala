@@ -4,4 +4,4 @@ pandas >= 0.25.0
 openpyxl==2.5.3
 python-harvest-apiv2>=1.0.1
 networkx >= 2.4
-koala_xlcalculator >= 0.0.1b
+xlcalculator >= 0.0.2b

@@ -19,7 +19,7 @@ setuptools.setup(
     version="0.0.6b0",
     author="Bradley van Ree",
     author_email="flyingkoala@bradbase.net",
-    description="Integration of xlwings and Koala2 with MS Excel plug-in",
+    description="Integration of xlwings and xlcalculator with MS Excel plug-in",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords=['xls',
@@ -69,6 +69,6 @@ setuptools.setup(
             'openpyxl <= 2.5.3',
             'python-harvest-apiv2 >= 1.0.1',
             'networkx >= 2.4',
-            'koala_xlcalculator >= 0.0.1b'
+            'xlcalculator >= 0.0.2b'
         ]
 )
