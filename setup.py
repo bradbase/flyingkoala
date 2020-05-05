@@ -66,9 +66,6 @@ setuptools.setup(
             'xlwings >= 0.15.8',
             'numpy >= 1.15.0',
             'pandas >= 0.25.0',
-            'openpyxl >= 3.0.3',
-            'python-harvest-apiv2 >= 1.0.1',
-            'networkx >= 2.4',
-            'xlcalculator >= 0.0.2b'
+            'xlcalculator >= 0.0.5b',
         ]
 )

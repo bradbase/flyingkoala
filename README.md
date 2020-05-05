@@ -6,8 +6,12 @@ FlyingKoala facilitates defining quantitative and qualitative models, scenario a
 From a technical standpoint FlyingKoala is a collection of helper functions for [xlwings](https://www.xlwings.org/). These helper functions reach out to:
 * [koala_xlcalcualtor](https://github.com/bradbase/koala_xlcalculator)
 * [Pandas](https://pandas.pydata.org/)
+
+Due to additional dependencies these services have been placed in their own libraries.
 * [Harvest](https://github.com/bradbase/python-harvest_apiv2)
+  * flyingkoala_Harvest
 * [PVLib](https://pvlib-python.readthedocs.io/en/stable/)
+  * flyingkoala_pvlib
 
 To a large extent the advantages for data analysis with FlyingKoala actually comes from clever use of Excel's existing functionality and the greatness of xlwings. FlyingKoala provides a number of pre-written Python UDFs which are especially useful in going beyond the usual limits of Excel.
 
