@@ -5,8 +5,10 @@ import logging
 import xlwings as xw
 from flyingkoala import FlyingKoala
 from pandas import DataFrame
+from pandas import Series
 from numpy import array
 from numpy.testing import assert_array_equal
+from pandas.testing import assert_series_equal
 
 logging.basicConfig(level=logging.ERROR)
 
@@ -63,6 +65,19 @@ class Test_equation_1(unittest.TestCase):
         result = self.my_fk.evaluate_koala_model('Equation_1', inputs_for_DegreeDay).to_numpy()
 
         assert_array_equal(goal, result)
+
+
+    def test_Equation_1_predefined_goal(self):
+        """First type of test for Equation_1"""
+
+        goal = Series([0.0, 0.0, 0.0, 0.0, 0.0, 5, 10, 15, 20])
+
+        tmin = [-20, -15, -10, -5, 0, 5, 10, 15, 20]
+        tmax = [0, 5, 10, 15, 20, 25, 30, 35, 40]
+        inputs_for_DegreeDay = DataFrame({'T_min': tmin, 'T_max': tmax})
+        result = self.my_fk.evaluate_koala_model('Equation_1', inputs_for_DegreeDay)
+
+        assert_series_equal(goal, result)
 
 
     def test_VBA_Equation_1(self):
