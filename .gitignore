@@ -9,3 +9,6 @@ flyingkoala/energy/__pycache__
 flyingkoala/horticulture/__pycache__
 flyingkoala/timeseries/__pycache__
 flyingkoala/unit_testing_formulas/__pycache__
+flyingkoala/examples/__pycache__
+flyingkoala/examples/growing_degrees_day/__pycache__
+flyingkoala/examples/unit_test_formulas/__pycache__

@@ -1,4 +1,5 @@
 name = "flyingkoala"
+from .flyingkoala import FlyingKoala
 from .flyingkoala import generate_model_graph
 from .flyingkoala import reload_koala
 from .flyingkoala import reset_koala_model_cache
