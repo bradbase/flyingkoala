@@ -82,7 +82,7 @@ Wrapping a variety of things from Pandas is also a great effort in terms of time
 [The latest documentation](https://flyingkoala.readthedocs.io/en/latest/)
 
 # Examples
-These are code examples for using FlyingKoala with the supplied UDFs. For a worked example on how to take advantage of the Koala2 Excel formula reading, read the worked example in the [Introduction PDF](https://github.com/bradbase/flyingkoala/blob/master/doc/Introduction_Article.pdf). The worked example uses the horticulture library to demonstrate the advantages of Koala2 when used in conjunction with the xlwings UDF functionality.
+These are code examples for using FlyingKoala with the supplied UDFs. For a worked example on how to take advantage of the Koala2 Excel formula reading, read the worked example in the [online documentation](https://flyingkoala.readthedocs.io/en/latest/worked_example_horticulture.html). The worked example uses the horticulture library to demonstrate the advantages of Koala2 when used in conjunction with the xlwings UDF functionality.
 
 ## Horticulture library
 There is a library of horticulture related UDFs which assist in calculating Growing Degree-Days. The extent of the Python code you would need to start using the Excel User Defined Function =DegreeDay():
