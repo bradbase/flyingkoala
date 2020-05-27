@@ -66,6 +66,7 @@ setuptools.setup(
             'xlwings >= 0.15.8',
             'numpy >= 1.15.0',
             'pandas >= 0.25.0',
-            'xlcalculator >= 0.0.5b',
+            'xlfunctions <= 0.0.3b0',
+            'xlcalculator <= 0.0.5b0',
         ]
 )
