@@ -16,10 +16,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flyingkoala",
-    version="0.0.10b3",
+    version="0.0.10b4",
     author="Bradley van Ree",
     author_email="flyingkoala@bradbase.net",
-    description="Integration of xlwings and xlcalculator with MS Excel plug-in",
+    description="Integration of xlwings and xlcalculator with MS Excel plug-in.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     keywords=['xls',
@@ -63,10 +63,10 @@ setuptools.setup(
         'Operating System :: MacOS :: MacOS X',
     ],
     install_requires=[
-            'xlwings >= 0.15.8',
-            'numpy >= 1.15.0',
-            'pandas >= 0.25.0',
-            'xlfunctions == 0.0.3b0',
-            'xlcalculator == 0.0.5b0',
+            'xlwings>=0.15.8',
+            'numpy>=1.15.0',
+            'pandas>=0.25.0',
+            'xlfunctions==0.0.3b0',
+            'xlcalculator==0.0.5b0',
         ]
 )
