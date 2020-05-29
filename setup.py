@@ -16,7 +16,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="flyingkoala",
-    version="0.0.10b1",
+    version="0.0.10b2",
     author="Bradley van Ree",
     author_email="flyingkoala@bradbase.net",
     description="Integration of xlwings and xlcalculator with MS Excel plug-in",
